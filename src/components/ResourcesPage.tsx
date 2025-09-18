@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Input } from '@/components/ui/input';
 import PageTemplate from './PageTemplate';
+import { JSX } from "react";
 import { 
   Search,
   Filter,

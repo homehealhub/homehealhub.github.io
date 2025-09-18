@@ -1,6 +1,7 @@
 import React from 'react';
 import { Separator } from '@/components/ui/separator';
 import { Heart } from 'lucide-react';
+import { JSX } from "react";
 
 export default function Footer(): JSX.Element {
   return (

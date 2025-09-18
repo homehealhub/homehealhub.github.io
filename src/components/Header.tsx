@@ -1,6 +1,7 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Heart, Menu } from 'lucide-react';
+import { JSX } from "react";
 
 interface HeaderProps {
   currentPage?: string;
