@@ -1,0 +1,132 @@
+[
+  {
+    "id": 1,
+    "title": "Essential Equipment for Safe Home Healthcare",
+    "author": "Dr. Sarah Johnson",
+    "publishDate": "2024-03-15",
+    "category": "Equipment",
+    "excerpt": "Learn about the most important medical equipment needed for home healthcare and how to set it up safely...",
+    "readTime": "8 min read",
+    "tags": ["Equipment", "Safety", "Setup"]
+  },
+  {
+    "id": 2,
+    "title": "Preparing Your Home for Medical Equipment Installation",
+    "author": "Dr. Michael Chen",
+    "publishDate": "2024-12-15",
+    "category": "Equipment",
+    "excerpt": "Essential steps to ensure your home is ready for medical equipment setup, including safety considerations and space planning.",
+    "readTime": "5 min read",
+    "tags": ["Equipment", "Home Preparation", "Safety", "Installation"]
+  },
+  {
+    "id": 3,
+    "title": "Communication Strategies with Home Healthcare Providers",
+    "author": "Lisa Rodriguez, RN",
+    "publishDate": "2024-12-12",
+    "category": "Training",
+    "excerpt": "Learn effective ways to communicate with your healthcare team to ensure the best possible care outcomes.",
+    "readTime": "7 min read",
+    "tags": ["Training", "Communication", "Healthcare Team", "Care Coordination"]
+  },
+  {
+    "id": 4,
+    "title": "Understanding Progress Tracking in Home Care",
+    "author": "Dr. Emily Watson",
+    "publishDate": "2024-12-10",
+    "category": "Monitoring",
+    "excerpt": "A comprehensive guide to monitoring and documenting patient progress for optimal healthcare management.",
+    "readTime": "6 min read",
+    "tags": ["Monitoring", "Documentation", "Progress Tracking", "Care Management"]
+  },
+  {
+    "id": 5,
+    "title": "Getting Started with Home Healthcare: A Family's Guide",
+    "author": "Dr. Sarah Johnson",
+    "publishDate": "2023-04-22",
+    "category": "General",
+    "excerpt": "A comprehensive beginner's guide for families transitioning to home healthcare, covering essential first steps and expectations.",
+    "readTime": "9 min read",
+    "tags": ["General", "Getting Started", "Family Guide", "Transition"]
+  },
+  {
+    "id": 6,
+    "title": "Creating a Safe Home Environment for Medical Care",
+    "author": "Dr. Michael Chen",
+    "publishDate": "2023-11-08",
+    "category": "Safety",
+    "excerpt": "Essential safety modifications and considerations for creating a secure home healthcare environment for patients and caregivers.",
+    "readTime": "7 min read",
+    "tags": ["Safety", "Home Modifications", "Risk Prevention", "Environment"]
+  },
+  {
+    "id": 7,
+    "title": "Understanding Insurance Coverage for Home Healthcare",
+    "author": "Lisa Rodriguez, RN",
+    "publishDate": "2024-06-14",
+    "category": "Finance",
+    "excerpt": "Navigate the complex world of insurance coverage for home healthcare services, including Medicare, Medicaid, and private insurance options.",
+    "readTime": "10 min read",
+    "tags": ["Finance", "Insurance", "Medicare", "Coverage"]
+  },
+  {
+    "id": 8,
+    "title": "Building Your Home Healthcare Support Network",
+    "author": "Dr. Emily Watson",
+    "publishDate": "2025-02-18",
+    "category": "Support",
+    "excerpt": "Learn how to create a strong support network of family, friends, and professionals to ensure successful home healthcare management.",
+    "readTime": "8 min read",
+    "tags": ["Support", "Network Building", "Family Care", "Community"]
+  },
+  {
+    "id": 9,
+    "title": "Understanding Insurance Coverage for Medical Equipment",
+    "author": "Dr. Sarah Johnson",
+    "publishDate": "2024-01-30",
+    "category": "General",
+    "excerpt": "Navigate the complexities of insurance coverage for medical equipment, including approval processes, coverage options, and cost management strategies.",
+    "readTime": "8 min read",
+    "tags": ["Insurance", "Medical Equipment", "Coverage", "Finance"]
+  },
+  {
+    "id": 10,
+    "title": "Emergency Procedures for Medical Equipment Failures",
+    "author": "Dr. Michael Chen",
+    "publishDate": "2023-09-12",
+    "category": "Equipment",
+    "excerpt": "Essential emergency procedures and backup plans for when medical equipment fails, ensuring patient safety and continuity of care.",
+    "readTime": "6 min read",
+    "tags": ["Equipment", "Emergency", "Safety", "Procedures"]
+  },
+  {
+    "id": 11,
+    "title": "Preventing Caregiver Burnout: Self-Care Strategies",
+    "author": "Lisa Rodriguez, RN",
+    "publishDate": "2024-08-05",
+    "category": "Training",
+    "excerpt": "Essential self-care strategies and burnout prevention techniques for family caregivers managing home healthcare responsibilities.",
+    "readTime": "6 min read",
+    "tags": ["Training", "Caregiver Support", "Self-Care", "Mental Health"]
+  },
+  {
+    "id": 12,
+    "title": "Digital Health Tools for Family Caregivers",
+    "author": "Dr. Emily Watson",
+    "publishDate": "2025-01-14",
+    "category": "Monitoring",
+    "excerpt": "Explore modern digital health tools and apps that help family caregivers track health data, coordinate care, and improve communication with healthcare providers.",
+    "readTime": "7 min read",
+    "tags": ["Monitoring", "Technology", "Digital Health", "Apps"]
+  },
+  {
+    "id": 13,
+    "title": "When to Communicate Changes to Healthcare Providers",
+    "author": "Dr. Sarah Johnson",
+    "publishDate": "2024-04-18",
+    "category": "Monitoring",
+    "excerpt": "Learn to recognize important health changes that require immediate communication with healthcare providers and understand the best ways to report them.",
+    "readTime": "5 min read",
+    "tags": ["Monitoring", "Communication", "Health Changes", "Provider Contact"]
+  }
+]
