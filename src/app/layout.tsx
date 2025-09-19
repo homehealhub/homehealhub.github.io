@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import "./globals.css";
 
 // Comprehensive SEO Metadata for the root layout
@@ -213,24 +214,24 @@ export default function RootLayout({
           {children}
         </div>
         
-        {/* Google Analytics or other analytics scripts would go here */}
+        {/* Google Analytics using Next.js Script component */}
         {process.env.NODE_ENV === 'production' && (
           <>
-            {/* Google Analytics Example - Replace with actual GA4 tracking ID */}
-            <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
-            <script
-              dangerouslySetInnerHTML={{
-                __html: `
-                  window.dataLayer = window.dataLayer || [];
-                  function gtag(){dataLayer.push(arguments);}
-                  gtag('js', new Date());
-                  gtag('config', 'GA_MEASUREMENT_ID', {
-                    page_title: document.title,
-                    page_location: window.location.href,
-                  });
-                `
-              }}
+            <Script
+              src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"
+              strategy="afterInteractive"
             />
+            <Script id="google-analytics" strategy="afterInteractive">
+              {`
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', 'GA_MEASUREMENT_ID', {
+                  page_title: document.title,
+                  page_location: window.location.href,
+                });
+              `}
+            </Script>
           </>
         )}
       </body>

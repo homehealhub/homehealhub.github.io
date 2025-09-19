@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from 'react';
+import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Heart, Menu, X } from 'lucide-react';
 import { JSX } from "react";
@@ -103,7 +104,7 @@ export default function Header({ currentPage = 'home' }: HeaderProps): JSX.Eleme
           <div className="flex justify-between items-center h-20">
             {/* Logo and Brand */}
             <div className="flex items-center space-x-3">
-              <a 
+              <Link 
                 href="/" 
                 className="flex items-center space-x-3 group"
                 aria-label="HomeHealHub - Home healthcare education and resources"
@@ -116,7 +117,7 @@ export default function Header({ currentPage = 'home' }: HeaderProps): JSX.Eleme
                     HomeHealHub
                   </h1>
                 </div>
-              </a>
+              </Link>
             </div>
 
             {/* Desktop Navigation */}
@@ -126,7 +127,7 @@ export default function Header({ currentPage = 'home' }: HeaderProps): JSX.Eleme
               aria-label="Main navigation"
             >
               {navItems.map((item) => (
-                <a
+                <Link
                   key={item.key}
                   href={item.href}
                   className={`font-medium transition-colors ${
@@ -138,7 +139,7 @@ export default function Header({ currentPage = 'home' }: HeaderProps): JSX.Eleme
                   {...(currentPage === item.key && { 'aria-current': 'page' })}
                 >
                   {item.label}
-                </a>
+                </Link>
               ))}
             </nav>
 
@@ -169,7 +170,7 @@ export default function Header({ currentPage = 'home' }: HeaderProps): JSX.Eleme
             >
               <div className="flex flex-col space-y-4">
                 {navItems.map((item) => (
-                  <a
+                  <Link
                     key={item.key}
                     href={item.href}
                     className={`font-medium transition-colors px-2 py-2 rounded-md ${
@@ -182,7 +183,7 @@ export default function Header({ currentPage = 'home' }: HeaderProps): JSX.Eleme
                     {...(currentPage === item.key && { 'aria-current': 'page' })}
                   >
                     {item.label}
-                  </a>
+                  </Link>
                 ))}
               </div>
             </nav>

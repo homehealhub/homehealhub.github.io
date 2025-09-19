@@ -1,10 +1,10 @@
 import React from 'react';
+import Link from 'next/link';
 import { Metadata } from 'next';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Separator } from '@/components/ui/separator';
 import PageTemplate from './PageTemplate';
-import { JSX } from "react";
 import { 
   Heart,
   Shield,
@@ -114,9 +114,9 @@ const AboutPage = () => {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
               <ol className="flex items-center space-x-2 text-sm text-[#6C757D]">
                 <li>
-                  <a href="/" className="hover:text-[#4ECDC4] transition-colors">
+                  <Link href="/" className="hover:text-[#4ECDC4] transition-colors">
                     Home
-                  </a>
+                  </Link>
                 </li>
                 <li className="before:content-['>'] before:mx-2 before:text-[#6C757D]">
                   <span className="text-[#4ECDC4]" aria-current="page">About</span>

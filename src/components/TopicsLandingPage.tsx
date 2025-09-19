@@ -354,7 +354,7 @@ export default function TopicsLandingPage(): JSX.Element {
                   </CardHeader>
                   <CardContent className="pt-0 flex-1 flex flex-col">
                     <div className="mb-6 flex-1">
-                      <h3 className="font-semibold text-[#343A40] mb-3">What You'll Learn:</h3>
+                      <h3 className="font-semibold text-[#343A40] mb-3">What Youll Learn:</h3>
                       <ul className="space-y-2" role="list">
                         {topic.keyFeatures.map((feature, featureIndex) => (
                           <li key={featureIndex} className="flex items-start gap-2 text-[#6C757D]">

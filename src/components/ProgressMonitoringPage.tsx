@@ -314,7 +314,7 @@ export default function ProgressMonitoringPage(): JSX.Element {
       {
         "@type": "Thing", 
         "name": "Home Healthcare",
-        "description": "Medical care provided in the patient's home environment"
+        "description": "Medical care provided in the patients home environment"
       },
       {
         "@type": "Thing",
@@ -506,7 +506,7 @@ export default function ProgressMonitoringPage(): JSX.Element {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-[#343A40] mb-4">
-                Family's Role in Progress Observation
+                Familys Role in Progress Observation
               </h2>
               <p className="text-lg text-[#6C757D] max-w-3xl mx-auto">
                 Family members provide invaluable observations that help healthcare providers 
@@ -660,7 +660,7 @@ export default function ProgressMonitoringPage(): JSX.Element {
                     <p>
                       Family input is valuable during care plan reviews. Come prepared with 
                       specific observations, questions about treatment goals, and feedback 
-                      about what's working well or causing challenges. Your daily observations 
+                      about whats working well or causing challenges. Your daily observations 
                       provide insights that clinical assessments might miss.
                     </p>
                   </CardContent>

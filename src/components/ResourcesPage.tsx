@@ -7,7 +7,6 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Input } from '@/components/ui/input';
 import PageTemplate from './PageTemplate';
-import { JSX } from "react";
 import { 
   Search,
   Filter,
@@ -684,11 +683,11 @@ const ResourcesPage = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl font-bold text-[#343A40] mb-4">
-              Can't Find What You're Looking For?
+              Cant Find What Youre Looking For?
             </h2>
             <p className="text-lg text-[#6C757D] mb-8 leading-relaxed">
-              We're constantly updating our resource directory. If you know of a quality healthcare 
-              resource that should be included, we'd love to hear about it.
+              Were constantly updating our resource directory. If you know of a quality healthcare 
+              resource that should be included, wed love to hear about it.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button 

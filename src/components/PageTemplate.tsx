@@ -20,11 +20,9 @@ export default function PageTemplate({
   className = '',
   additionalMeta
 }: PageTemplateProps): JSX.Element {
-  const pathname = usePathname();
   
   // Generate structured data for current page
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://homehealhub.com';
-  const fullUrl = `${baseUrl}${pathname}`;
   
   // Default organization structured data
   const organizationSchema = {
