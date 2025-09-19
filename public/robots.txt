@@ -1,2 +1,58 @@
+# HomeHealHub Robots.txt
+# Educational healthcare resource website
+
+# Allow all well-behaved crawlers
 User-agent: *
 Allow: /
+
+# Specifically allow important crawlers
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: facebookexternalhit
+Allow: /
+
+# Block access to admin/development areas (if they exist)
+Disallow: /admin/
+Disallow: /api/
+Disallow: /_next/
+Disallow: /private/
+
+# Block access to sensitive or duplicate content
+Disallow: /search?*
+Disallow: /*?utm_*
+Disallow: /*?ref=*
+Disallow: /*?fbclid=*
+
+# Allow but deprioritize certain file types
+User-agent: *
+Disallow: /pdf/
+Allow: /pdf/*.pdf
+
+# Block overly aggressive crawlers that might impact performance
+User-agent: AhrefsBot
+Crawl-delay: 10
+
+User-agent: SemrushBot
+Crawl-delay: 10
+
+User-agent: MJ12bot
+Crawl-delay: 5
+
+# Healthcare content - allow medical search engines
+User-agent: WebMD-Bot
+Allow: /
+
+User-agent: HealthlineBot
+Allow: /
+
+# Sitemap location
+Sitemap: https://homehealhub.com/sitemap.xml
+
+# Additional instructions for better crawling
+# Crawl-delay for general bots to ensure site performance
+User-agent: *
+Crawl-delay: 1

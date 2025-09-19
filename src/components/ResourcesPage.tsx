@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useMemo } from 'react';
+import { Metadata } from 'next';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
@@ -24,6 +25,38 @@ import {
   Star,
   MapPin
 } from 'lucide-react';
+
+// SEO Metadata
+export const metadata: Metadata = {
+  title: "Healthcare Resources & Partners | HomeHealHub Directory",
+  description: "Connect with trusted healthcare providers, medical equipment suppliers, and educational resources for home healthcare. Find verified partners and quality services near you.",
+  keywords: [
+    "healthcare resources",
+    "home healthcare providers",
+    "medical equipment suppliers",
+    "healthcare partners",
+    "home health services",
+    "healthcare directory",
+    "medical resources",
+    "healthcare education",
+    "provider directory",
+    "healthcare support"
+  ],
+  openGraph: {
+    title: "Healthcare Resources & Partners | HomeHealHub Directory",
+    description: "Comprehensive directory of trusted healthcare providers, equipment suppliers, and educational resources for home healthcare needs.",
+    type: "website",
+    url: "https://homehealhub.com/resources",
+    siteName: "HomeHealHub"
+  },
+  alternates: {
+    canonical: 'https://homehealhub.com/resources'
+  },
+  robots: {
+    index: true,
+    follow: true
+  }
+};
 
 interface Resource {
   id: string;
@@ -219,17 +252,17 @@ const ResourcesPage = () => {
   const getCategoryIcon = (category: string) => {
     switch (category) {
       case 'Healthcare Providers':
-        return <Stethoscope className="h-5 w-5" />;
+        return <Stethoscope className="h-5 w-5" aria-hidden="true" />;
       case 'Equipment Suppliers':
-        return <Settings className="h-5 w-5" />;
+        return <Settings className="h-5 w-5" aria-hidden="true" />;
       case 'Educational Materials':
-        return <BookOpen className="h-5 w-5" />;
+        return <BookOpen className="h-5 w-5" aria-hidden="true" />;
       case 'Government Resources':
-        return <Building2 className="h-5 w-5" />;
+        return <Building2 className="h-5 w-5" aria-hidden="true" />;
       case 'Support Organizations':
-        return <Users className="h-5 w-5" />;
+        return <Users className="h-5 w-5" aria-hidden="true" />;
       default:
-        return <Globe className="h-5 w-5" />;
+        return <Globe className="h-5 w-5" aria-hidden="true" />;
     }
   };
 
@@ -250,14 +283,89 @@ const ResourcesPage = () => {
     }
   };
 
+  // Structured Data for SEO
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Healthcare Resources & Partners Directory",
+    "description": "Comprehensive directory of trusted healthcare providers, equipment suppliers, and educational resources for home healthcare needs.",
+    "url": "https://homehealhub.com/resources",
+    "mainEntity": {
+      "@type": "ItemList",
+      "name": "Healthcare Resources Directory",
+      "description": "Curated list of healthcare resources for home care",
+      "numberOfItems": resources.length,
+      "itemListElement": resources.map((resource, index) => ({
+        "@type": "ListItem",
+        "position": index + 1,
+        "item": {
+          "@type": "Organization",
+          "name": resource.name,
+          "description": resource.description,
+          "url": resource.url,
+          ...(resource.phone && { "telephone": resource.phone }),
+          ...(resource.location && { "address": resource.location }),
+          ...(resource.rating && {
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": resource.rating,
+              "bestRating": 5
+            }
+          })
+        }
+      }))
+    },
+    "breadcrumb": {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://homehealhub.com"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Resources",
+          "item": "https://homehealhub.com/resources"
+        }
+      ]
+    },
+    "about": [
+      {
+        "@type": "Thing",
+        "name": "Home Healthcare",
+        "description": "Medical care and services provided in the patient's home"
+      },
+      {
+        "@type": "Thing",
+        "name": "Healthcare Providers",
+        "description": "Medical professionals and organizations providing healthcare services"
+      },
+      {
+        "@type": "Thing",
+        "name": "Medical Equipment",
+        "description": "Devices and supplies used in healthcare and medical treatment"
+      }
+    ],
+    "inLanguage": "en-US"
+  };
+
   return (
     <PageTemplate currentPage="resources">
+      {/* Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-[#F8F9FA] to-white py-20 lg:py-24">
+      <header className="bg-gradient-to-br from-[#F8F9FA] to-white py-20 lg:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl font-bold text-[#343A40] mb-6 leading-tight">
-              Healthcare Resources & Partners
+              Healthcare Resources & Partners Directory
             </h1>
             <p className="text-xl text-[#6C757D] mb-8 leading-relaxed">
               Connect with trusted healthcare providers, equipment suppliers, and educational resources 
@@ -265,285 +373,322 @@ const ResourcesPage = () => {
             </p>
             <div className="flex flex-wrap justify-center items-center gap-6 text-sm text-[#6C757D]">
               <div className="flex items-center gap-2">
-                <Shield className="h-5 w-5 text-[#28A745]" />
+                <Shield className="h-5 w-5 text-[#28A745]" aria-hidden="true" />
                 <span>Verified Providers</span>
               </div>
               <div className="flex items-center gap-2">
-                <Award className="h-5 w-5 text-[#28A745]" />
+                <Award className="h-5 w-5 text-[#28A745]" aria-hidden="true" />
                 <span>Quality Partners</span>
               </div>
               <div className="flex items-center gap-2">
-                <Heart className="h-5 w-5 text-[#28A745]" />
+                <Heart className="h-5 w-5 text-[#28A745]" aria-hidden="true" />
                 <span>Trusted Resources</span>
               </div>
             </div>
           </div>
         </div>
-      </section>
+      </header>
 
-      {/* Featured Partner Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#343A40] mb-4">
-              Featured Healthcare Partner
-            </h2>
-            <p className="text-lg text-[#6C757D] max-w-3xl mx-auto">
-              Spotlight on our trusted partners who exemplify excellence in home healthcare services
-            </p>
-          </div>
+      <main>
+        {/* Featured Partner Section */}
+        <section className="py-20 bg-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-bold text-[#343A40] mb-4">
+                Featured Healthcare Partner
+              </h2>
+              <p className="text-lg text-[#6C757D] max-w-3xl mx-auto">
+                Spotlight on our trusted partners who exemplify excellence in home healthcare services
+              </p>
+            </div>
 
-          {featuredResources.map((resource) => (
-            <div key={resource.id} className="max-w-4xl mx-auto">
-              <Card className="border-[#4ECDC4] bg-gradient-to-r from-[#4ECDC4]/5 to-[#52B788]/5">
-                <CardHeader>
-                  <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
-                    <div className="flex items-center gap-4">
-                      <div className="p-3 bg-[#4ECDC4] rounded-lg">
-                        <Stethoscope className="h-8 w-8 text-white" />
-                      </div>
-                      <div>
-                        <CardTitle className="text-2xl font-bold text-[#343A40] mb-2">
-                          {resource.name}
-                        </CardTitle>
-                        <div className="flex items-center gap-4 text-sm text-[#6C757D]">
-                          {resource.rating && (
-                            <div className="flex items-center gap-1">
-                              <Star className="h-4 w-4 fill-[#FFC107] text-[#FFC107]" />
-                              <span className="font-medium">{resource.rating}</span>
-                            </div>
-                          )}
-                          {resource.location && (
-                            <div className="flex items-center gap-1">
-                              <MapPin className="h-4 w-4" />
-                              <span>{resource.location}</span>
-                            </div>
-                          )}
-                          {resource.phone && (
-                            <div className="flex items-center gap-1">
-                              <Phone className="h-4 w-4" />
-                              <span>{resource.phone}</span>
-                            </div>
-                          )}
+            {featuredResources.map((resource) => (
+              <div key={resource.id} className="max-w-4xl mx-auto">
+                <Card className="border-[#4ECDC4] bg-gradient-to-r from-[#4ECDC4]/5 to-[#52B788]/5">
+                  <CardHeader>
+                    <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
+                      <div className="flex items-center gap-4">
+                        <div className="p-3 bg-[#4ECDC4] rounded-lg">
+                          <Stethoscope className="h-8 w-8 text-white" aria-hidden="true" />
+                        </div>
+                        <div>
+                          <CardTitle className="text-2xl font-bold text-[#343A40] mb-2">
+                            {resource.name}
+                          </CardTitle>
+                          <div className="flex items-center gap-4 text-sm text-[#6C757D]">
+                            {resource.rating && (
+                              <div className="flex items-center gap-1">
+                                <Star className="h-4 w-4 fill-[#FFC107] text-[#FFC107]" aria-hidden="true" />
+                                <span className="font-medium" aria-label={`Rating: ${resource.rating} out of 5 stars`}>
+                                  {resource.rating}
+                                </span>
+                              </div>
+                            )}
+                            {resource.location && (
+                              <div className="flex items-center gap-1">
+                                <MapPin className="h-4 w-4" aria-hidden="true" />
+                                <span>{resource.location}</span>
+                              </div>
+                            )}
+                            {resource.phone && (
+                              <div className="flex items-center gap-1">
+                                <Phone className="h-4 w-4" aria-hidden="true" />
+                                <a 
+                                  href={`tel:${resource.phone}`}
+                                  className="hover:text-[#4ECDC4] transition-colors"
+                                  aria-label={`Call ${resource.name} at ${resource.phone}`}
+                                >
+                                  {resource.phone}
+                                </a>
+                              </div>
+                            )}
+                          </div>
                         </div>
                       </div>
-                    </div>
-                    <Badge className="bg-[#4ECDC4] text-white hover:bg-[#3DB5AC] self-start md:self-center">
-                      Featured Partner
-                    </Badge>
-                  </div>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-[#6C757D] text-base leading-relaxed mb-6">
-                    {resource.description}
-                  </p>
-                  <div className="flex flex-wrap gap-2 mb-6">
-                    {resource.tags.map((tag, index) => (
-                      <Badge key={index} variant="outline" className="text-xs">
-                        {tag}
+                      <Badge className="bg-[#4ECDC4] text-white hover:bg-[#3DB5AC] self-start md:self-center">
+                        Featured Partner
                       </Badge>
-                    ))}
-                  </div>
-                  <Button 
-                    className="bg-[#4ECDC4] hover:bg-[#3DB5AC] text-white"
-                    asChild
-                  >
-                    <a href={resource.url} target="_blank" rel="noopener noreferrer" className="inline-flex items-center">
-                      Visit {resource.name}
-                      <ExternalLink className="ml-2 h-4 w-4" />
-                    </a>
-                  </Button>
-                </CardContent>
-              </Card>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Search and Filter Section */}
-      <section className="py-20 bg-[#F8F9FA]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#343A40] mb-4">
-              Browse All Resources
-            </h2>
-            <p className="text-lg text-[#6C757D] max-w-3xl mx-auto">
-              Find the right resources for your specific needs using our search and category filters
-            </p>
-          </div>
-
-          {/* Search and Filter Controls */}
-          <div className="max-w-4xl mx-auto mb-12">
-            <div className="flex flex-col md:flex-row gap-4 mb-8">
-              <div className="relative flex-1">
-                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-[#6C757D]" />
-                <Input
-                  placeholder="Search resources, providers, or services..."
-                  value={searchTerm}
-                  onChange={(e) => setSearchTerm(e.target.value)}
-                  className="pl-10 border-[#E5E7EB] focus:border-[#4ECDC4]"
-                />
-              </div>
-              <div className="flex items-center gap-2">
-                <Filter className="h-4 w-4 text-[#6C757D]" />
-                <select
-                  value={selectedCategory}
-                  onChange={(e) => setSelectedCategory(e.target.value)}
-                  className="px-3 py-2 border border-[#E5E7EB] rounded-md focus:border-[#4ECDC4] focus:outline-none bg-white"
-                >
-                  {categories.map((category) => (
-                    <option key={category} value={category}>
-                      {category}
-                    </option>
-                  ))}
-                </select>
-              </div>
-            </div>
-
-            {/* Category Quick Filters */}
-            <div className="flex flex-wrap gap-2 justify-center">
-              {categories.slice(1).map((category) => (
-                <Button
-                  key={category}
-                  variant={selectedCategory === category ? "default" : "outline"}
-                  size="sm"
-                  onClick={() => setSelectedCategory(category)}
-                  className={selectedCategory === category 
-                    ? "bg-[#4ECDC4] hover:bg-[#3DB5AC] text-white" 
-                    : "border-[#4ECDC4] text-[#4ECDC4] hover:bg-[#4ECDC4] hover:text-white"
-                  }
-                >
-                  <span className="mr-2">{getCategoryIcon(category)}</span>
-                  {category}
-                </Button>
-              ))}
-            </div>
-          </div>
-
-          {/* Results Count */}
-          <div className="max-w-4xl mx-auto mb-8">
-            <p className="text-[#6C757D] text-center">
-              Showing {filteredResources.length} resource{filteredResources.length !== 1 ? 's' : ''}
-              {selectedCategory !== 'All Categories' && ` in ${selectedCategory}`}
-              {searchTerm && ` matching "${searchTerm}"`}
-            </p>
-          </div>
-
-          {/* Resources Grid */}
-          <div className="max-w-6xl mx-auto">
-            {filteredResources.length > 0 ? (
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {filteredResources.map((resource) => (
-                  <Card key={resource.id} className="bg-white border-[#E5E7EB] hover:border-[#4ECDC4] hover:shadow-lg transition-all duration-300 group">
-                    <CardHeader>
-                      <div className="flex items-start justify-between mb-3">
-                        <div className="flex items-center gap-2">
-                          <div className="p-2 bg-[#F8F9FA] rounded-lg group-hover:bg-[#4ECDC4]/10 transition-colors">
-                            {getCategoryIcon(resource.category)}
-                          </div>
-                          <Badge variant="secondary" className={getTypeColor(resource.type)}>
-                            {resource.type}
-                          </Badge>
-                        </div>
-                        {resource.rating && (
-                          <div className="flex items-center gap-1">
-                            <Star className="h-4 w-4 fill-[#FFC107] text-[#FFC107]" />
-                            <span className="text-sm font-medium text-[#6C757D]">{resource.rating}</span>
-                          </div>
-                        )}
-                      </div>
-                      <CardTitle className="text-lg font-semibold text-[#343A40] group-hover:text-[#4ECDC4] transition-colors">
-                        {resource.name}
-                      </CardTitle>
-                      <CardDescription className="text-sm text-[#6C757D]">
-                        {resource.category}
-                      </CardDescription>
-                    </CardHeader>
-                    <CardContent>
-                      <p className="text-[#6C757D] text-sm leading-relaxed mb-4 line-clamp-3">
-                        {resource.description}
-                      </p>
-                      
-                      {(resource.location || resource.phone) && (
-                        <div className="space-y-1 mb-4 text-xs text-[#6C757D]">
-                          {resource.location && (
-                            <div className="flex items-center gap-1">
-                              <MapPin className="h-3 w-3" />
-                              <span>{resource.location}</span>
-                            </div>
-                          )}
-                          {resource.phone && (
-                            <div className="flex items-center gap-1">
-                              <Phone className="h-3 w-3" />
-                              <span>{resource.phone}</span>
-                            </div>
-                          )}
-                        </div>
-                      )}
-
-                      <div className="flex flex-wrap gap-1 mb-4">
-                        {resource.tags.slice(0, 3).map((tag, index) => (
-                          <Badge key={index} variant="outline" className="text-xs">
-                            {tag}
-                          </Badge>
-                        ))}
-                        {resource.tags.length > 3 && (
-                          <Badge variant="outline" className="text-xs">
-                            +{resource.tags.length - 3} more
-                          </Badge>
-                        )}
-                      </div>
-
-                      <Button 
-                        variant="outline" 
-                        size="sm"
-                        className="w-full border-[#4ECDC4] text-[#4ECDC4] hover:bg-[#4ECDC4] hover:text-white"
-                        asChild
+                    </div>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-[#6C757D] text-base leading-relaxed mb-6">
+                      {resource.description}
+                    </p>
+                    <div className="flex flex-wrap gap-2 mb-6">
+                      {resource.tags.map((tag, index) => (
+                        <Badge key={index} variant="outline" className="text-xs">
+                          {tag}
+                        </Badge>
+                      ))}
+                    </div>
+                    <Button 
+                      className="bg-[#4ECDC4] hover:bg-[#3DB5AC] text-white"
+                      asChild
+                    >
+                      <a 
+                        href={resource.url} 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        className="inline-flex items-center"
+                        aria-label={`Visit ${resource.name} website (opens in new tab)`}
                       >
-                        <a href={resource.url} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center">
-                          Visit Resource
-                          <ExternalLink className="ml-2 h-3 w-3" />
-                        </a>
-                      </Button>
-                    </CardContent>
-                  </Card>
+                        Visit {resource.name}
+                        <ExternalLink className="ml-2 h-4 w-4" aria-hidden="true" />
+                      </a>
+                    </Button>
+                  </CardContent>
+                </Card>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Search and Filter Section */}
+        <section className="py-20 bg-[#F8F9FA]">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold text-[#343A40] mb-4">
+                Browse All Healthcare Resources
+              </h2>
+              <p className="text-lg text-[#6C757D] max-w-3xl mx-auto">
+                Find the right resources for your specific needs using our search and category filters
+              </p>
+            </div>
+
+            {/* Search and Filter Controls */}
+            <div className="max-w-4xl mx-auto mb-12">
+              <div className="flex flex-col md:flex-row gap-4 mb-8">
+                <div className="relative flex-1">
+                  <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-[#6C757D]" aria-hidden="true" />
+                  <Input
+                    placeholder="Search resources, providers, or services..."
+                    value={searchTerm}
+                    onChange={(e) => setSearchTerm(e.target.value)}
+                    className="pl-10 border-[#E5E7EB] focus:border-[#4ECDC4]"
+                    aria-label="Search healthcare resources"
+                  />
+                </div>
+                <div className="flex items-center gap-2">
+                  <Filter className="h-4 w-4 text-[#6C757D]" aria-hidden="true" />
+                  <label htmlFor="category-filter" className="sr-only">Filter by category</label>
+                  <select
+                    id="category-filter"
+                    value={selectedCategory}
+                    onChange={(e) => setSelectedCategory(e.target.value)}
+                    className="px-3 py-2 border border-[#E5E7EB] rounded-md focus:border-[#4ECDC4] focus:outline-none bg-white"
+                    aria-label="Filter resources by category"
+                  >
+                    {categories.map((category) => (
+                      <option key={category} value={category}>
+                        {category}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+              </div>
+
+              {/* Category Quick Filters */}
+              <div className="flex flex-wrap gap-2 justify-center" role="group" aria-label="Quick category filters">
+                {categories.slice(1).map((category) => (
+                  <Button
+                    key={category}
+                    variant={selectedCategory === category ? "default" : "outline"}
+                    size="sm"
+                    onClick={() => setSelectedCategory(category)}
+                    className={selectedCategory === category 
+                      ? "bg-[#4ECDC4] hover:bg-[#3DB5AC] text-white" 
+                      : "border-[#4ECDC4] text-[#4ECDC4] hover:bg-[#4ECDC4] hover:text-white"
+                    }
+                    aria-pressed={selectedCategory === category}
+                    aria-label={`Filter by ${category}`}
+                  >
+                    <span className="mr-2">{getCategoryIcon(category)}</span>
+                    {category}
+                  </Button>
                 ))}
               </div>
-            ) : (
-              <div className="text-center py-12">
-                <div className="p-4 bg-[#F8F9FA] rounded-lg inline-block mb-4">
-                  <Search className="h-8 w-8 text-[#6C757D]" />
+            </div>
+
+            {/* Results Count */}
+            <div className="max-w-4xl mx-auto mb-8">
+              <p className="text-[#6C757D] text-center" role="status" aria-live="polite">
+                Showing {filteredResources.length} resource{filteredResources.length !== 1 ? 's' : ''}
+                {selectedCategory !== 'All Categories' && ` in ${selectedCategory}`}
+                {searchTerm && ` matching "${searchTerm}"`}
+              </p>
+            </div>
+
+            {/* Resources Grid */}
+            <div className="max-w-6xl mx-auto">
+              {filteredResources.length > 0 ? (
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6" role="list" aria-label="Healthcare resources">
+                  {filteredResources.map((resource) => (
+                    <Card key={resource.id} className="bg-white border-[#E5E7EB] hover:border-[#4ECDC4] hover:shadow-lg transition-all duration-300 group" role="listitem">
+                      <CardHeader>
+                        <div className="flex items-start justify-between mb-3">
+                          <div className="flex items-center gap-2">
+                            <div className="p-2 bg-[#F8F9FA] rounded-lg group-hover:bg-[#4ECDC4]/10 transition-colors">
+                              {getCategoryIcon(resource.category)}
+                            </div>
+                            <Badge variant="secondary" className={getTypeColor(resource.type)}>
+                              {resource.type}
+                            </Badge>
+                          </div>
+                          {resource.rating && (
+                            <div className="flex items-center gap-1">
+                              <Star className="h-4 w-4 fill-[#FFC107] text-[#FFC107]" aria-hidden="true" />
+                              <span className="text-sm font-medium text-[#6C757D]" aria-label={`Rating: ${resource.rating} out of 5 stars`}>
+                                {resource.rating}
+                              </span>
+                            </div>
+                          )}
+                        </div>
+                        <CardTitle className="text-lg font-semibold text-[#343A40] group-hover:text-[#4ECDC4] transition-colors">
+                          {resource.name}
+                        </CardTitle>
+                        <CardDescription className="text-sm text-[#6C757D]">
+                          {resource.category}
+                        </CardDescription>
+                      </CardHeader>
+                      <CardContent>
+                        <p className="text-[#6C757D] text-sm leading-relaxed mb-4 line-clamp-3">
+                          {resource.description}
+                        </p>
+                        
+                        {(resource.location || resource.phone) && (
+                          <div className="space-y-1 mb-4 text-xs text-[#6C757D]">
+                            {resource.location && (
+                              <div className="flex items-center gap-1">
+                                <MapPin className="h-3 w-3" aria-hidden="true" />
+                                <span>{resource.location}</span>
+                              </div>
+                            )}
+                            {resource.phone && (
+                              <div className="flex items-center gap-1">
+                                <Phone className="h-3 w-3" aria-hidden="true" />
+                                <a 
+                                  href={`tel:${resource.phone}`}
+                                  className="hover:text-[#4ECDC4] transition-colors"
+                                  aria-label={`Call ${resource.name} at ${resource.phone}`}
+                                >
+                                  {resource.phone}
+                                </a>
+                              </div>
+                            )}
+                          </div>
+                        )}
+
+                        <div className="flex flex-wrap gap-1 mb-4">
+                          {resource.tags.slice(0, 3).map((tag, index) => (
+                            <Badge key={index} variant="outline" className="text-xs">
+                              {tag}
+                            </Badge>
+                          ))}
+                          {resource.tags.length > 3 && (
+                            <Badge variant="outline" className="text-xs">
+                              +{resource.tags.length - 3} more
+                            </Badge>
+                          )}
+                        </div>
+
+                        <Button 
+                          variant="outline" 
+                          size="sm"
+                          className="w-full border-[#4ECDC4] text-[#4ECDC4] hover:bg-[#4ECDC4] hover:text-white"
+                          asChild
+                        >
+                          <a 
+                            href={resource.url} 
+                            target="_blank" 
+                            rel="noopener noreferrer" 
+                            className="inline-flex items-center justify-center"
+                            aria-label={`Visit ${resource.name} website (opens in new tab)`}
+                          >
+                            Visit Resource
+                            <ExternalLink className="ml-2 h-3 w-3" aria-hidden="true" />
+                          </a>
+                        </Button>
+                      </CardContent>
+                    </Card>
+                  ))}
                 </div>
-                <h3 className="text-lg font-semibold text-[#343A40] mb-2">No resources found</h3>
-                <p className="text-[#6C757D] mb-4">
-                  Try adjusting your search terms or category filters
-                </p>
-                <Button 
-                  variant="outline"
-                  onClick={() => {
-                    setSearchTerm('');
-                    setSelectedCategory('All Categories');
-                  }}
-                  className="border-[#4ECDC4] text-[#4ECDC4] hover:bg-[#4ECDC4] hover:text-white"
-                >
-                  Clear Filters
-                </Button>
-              </div>
-            )}
+              ) : (
+                <div className="text-center py-12" role="status">
+                  <div className="p-4 bg-[#F8F9FA] rounded-lg inline-block mb-4">
+                    <Search className="h-8 w-8 text-[#6C757D]" aria-hidden="true" />
+                  </div>
+                  <h3 className="text-lg font-semibold text-[#343A40] mb-2">No resources found</h3>
+                  <p className="text-[#6C757D] mb-4">
+                    Try adjusting your search terms or category filters
+                  </p>
+                  <Button 
+                    variant="outline"
+                    onClick={() => {
+                      setSearchTerm('');
+                      setSelectedCategory('All Categories');
+                    }}
+                    className="border-[#4ECDC4] text-[#4ECDC4] hover:bg-[#4ECDC4] hover:text-white"
+                    aria-label="Clear all search filters"
+                  >
+                    Clear Filters
+                  </Button>
+                </div>
+              )}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </main>
 
       {/* Call to Action Section */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl font-bold text-[#343A40] mb-4">
-              Cant Find What Youre Looking For?
+              Can't Find What You're Looking For?
             </h2>
             <p className="text-lg text-[#6C757D] mb-8 leading-relaxed">
-              Were constantly updating our resource directory. If you know of a quality healthcare 
-              resource that should be included, wed love to hear about it.
+              We're constantly updating our resource directory. If you know of a quality healthcare 
+              resource that should be included, we'd love to hear about it.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button 

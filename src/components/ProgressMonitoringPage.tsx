@@ -1,4 +1,5 @@
 import React from 'react';
+import { Metadata } from 'next';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
@@ -28,6 +29,36 @@ import {
   HelpCircle,
   LineChart
 } from 'lucide-react';
+
+// SEO Metadata
+export const metadata: Metadata = {
+  title: "Progress Monitoring in Home Healthcare | HomeHealHub",
+  description: "Learn effective methods for tracking patient progress in home healthcare settings. Discover monitoring tools, observation techniques, and communication strategies for optimal care outcomes.",
+  keywords: [
+    "progress monitoring",
+    "home healthcare tracking",
+    "patient progress assessment",
+    "health monitoring tools",
+    "family caregiving observation",
+    "care plan adjustments",
+    "remote patient monitoring",
+    "healthcare documentation"
+  ],
+  openGraph: {
+    title: "Progress Monitoring in Home Healthcare | HomeHealHub",
+    description: "Comprehensive guide to tracking patient progress, utilizing monitoring tools, and communicating with healthcare providers in home care settings.",
+    type: "article",
+    url: "https://homehealhub.com/topics/progress-monitoring",
+    siteName: "HomeHealHub"
+  },
+  alternates: {
+    canonical: 'https://homehealhub.com/topics/progress-monitoring'
+  },
+  robots: {
+    index: true,
+    follow: true
+  }
+};
 
 interface MonitoringMethod {
   icon: React.ReactNode;
@@ -252,8 +283,57 @@ const relatedArticles: RelatedArticle[] = [
 ];
 
 export default function ProgressMonitoringPage(): JSX.Element {
+  // Structured Data for SEO
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Progress Monitoring in Home Healthcare",
+    "description": "Comprehensive guide to tracking patient progress, utilizing monitoring tools, and communicating with healthcare providers in home care settings.",
+    "author": {
+      "@type": "Organization",
+      "name": "HomeHealHub"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "HomeHealHub",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://homehealhub.com/logo.png"
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://homehealhub.com/topics/progress-monitoring"
+    },
+    "about": [
+      {
+        "@type": "Thing",
+        "name": "Progress Monitoring",
+        "description": "Systematic observation and measurement of patient health status and treatment responses"
+      },
+      {
+        "@type": "Thing", 
+        "name": "Home Healthcare",
+        "description": "Medical care provided in the patient's home environment"
+      },
+      {
+        "@type": "Thing",
+        "name": "Patient Care Coordination",
+        "description": "Collaborative approach to managing patient health across multiple providers"
+      }
+    ],
+    "keywords": "progress monitoring, home healthcare, patient tracking, health monitoring tools, family caregiving",
+    "inLanguage": "en-US"
+  };
+
   return (
     <PageTemplate currentPage="topics">
+      {/* Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+
       {/* Breadcrumb Navigation */}
       <section className="bg-[#F8F9FA] py-4">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -282,16 +362,16 @@ export default function ProgressMonitoringPage(): JSX.Element {
       </section>
 
       {/* Page Header */}
-      <section className="bg-gradient-to-br from-[#4ECDC4]/5 to-[#52B788]/5 py-16">
+      <header className="bg-gradient-to-br from-[#4ECDC4]/5 to-[#52B788]/5 py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
             <div className="flex justify-center mb-6">
               <div className="p-4 bg-[#4ECDC4] rounded-lg">
-                <TrendingUp className="h-10 w-10 text-white" />
+                <TrendingUp className="h-10 w-10 text-white" aria-hidden="true" />
               </div>
             </div>
             <h1 className="text-4xl md:text-5xl font-bold text-[#343A40] mb-6">
-              Progress Monitoring
+              Progress Monitoring in Home Healthcare
             </h1>
             <p className="text-xl text-[#6C757D] leading-relaxed max-w-3xl mx-auto">
               Learn effective methods for tracking patient progress, utilizing monitoring tools 
@@ -300,477 +380,479 @@ export default function ProgressMonitoringPage(): JSX.Element {
             </p>
           </div>
         </div>
-      </section>
+      </header>
 
       {/* Overview Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#343A40] mb-8 text-center">
-              The Importance of Progress Monitoring
-            </h2>
-            <div className="prose prose-lg max-w-none text-[#6C757D] leading-relaxed">
-              <p className="text-lg mb-6">
-                Progress monitoring in home healthcare involves the systematic observation, 
-                measurement, and documentation of patient health status, treatment responses, 
-                and functional abilities over time. This ongoing assessment helps healthcare 
-                teams make informed decisions about care plans and interventions.
-              </p>
-              <p className="text-lg mb-6">
-                Effective monitoring combines objective measurements with subjective observations, 
-                creating a comprehensive picture of patient progress. Family members and caregivers 
-                play a crucial role in this process, as they observe patients daily and can identify 
-                subtle changes that might be missed during periodic provider visits.
-              </p>
-              <p className="text-lg">
-                Modern monitoring approaches integrate traditional observation methods with 
-                digital tools and remote monitoring technologies, enabling more precise tracking 
-                and faster response to changes in patient condition.
-              </p>
+      <main>
+        <section className="py-20 bg-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-4xl mx-auto">
+              <h2 className="text-3xl md:text-4xl font-bold text-[#343A40] mb-8 text-center">
+                The Importance of Progress Monitoring
+              </h2>
+              <div className="prose prose-lg max-w-none text-[#6C757D] leading-relaxed">
+                <p className="text-lg mb-6">
+                  Progress monitoring in home healthcare involves the systematic observation, 
+                  measurement, and documentation of patient health status, treatment responses, 
+                  and functional abilities over time. This ongoing assessment helps healthcare 
+                  teams make informed decisions about care plans and interventions.
+                </p>
+                <p className="text-lg mb-6">
+                  Effective monitoring combines objective measurements with subjective observations, 
+                  creating a comprehensive picture of patient progress. Family members and caregivers 
+                  play a crucial role in this process, as they observe patients daily and can identify 
+                  subtle changes that might be missed during periodic provider visits.
+                </p>
+                <p className="text-lg">
+                  Modern monitoring approaches integrate traditional observation methods with 
+                  digital tools and remote monitoring technologies, enabling more precise tracking 
+                  and faster response to changes in patient condition.
+                </p>
+              </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Methods of Tracking Patient Progress */}
-      <section className="py-20 bg-[#F8F9FA]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#343A40] mb-4">
-              Methods of Tracking Patient Progress
-            </h2>
-            <p className="text-lg text-[#6C757D] max-w-3xl mx-auto">
-              Comprehensive progress monitoring combines multiple assessment methods to 
-              provide a complete picture of patient health and recovery.
-            </p>
+        {/* Methods of Tracking Patient Progress */}
+        <section className="py-20 bg-[#F8F9FA]">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-bold text-[#343A40] mb-4">
+                Methods of Tracking Patient Progress
+              </h2>
+              <p className="text-lg text-[#6C757D] max-w-3xl mx-auto">
+                Comprehensive progress monitoring combines multiple assessment methods to 
+                provide a complete picture of patient health and recovery.
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-8">
+              {monitoringMethods.map((method, index) => (
+                <Card key={index} className="bg-white border-[#E5E7EB] hover:border-[#4ECDC4] transition-colors">
+                  <CardHeader>
+                    <div className="flex items-center gap-3 mb-2">
+                      {method.icon}
+                      <CardTitle className="text-xl font-semibold text-[#343A40]">
+                        {method.title}
+                      </CardTitle>
+                    </div>
+                    <CardDescription className="text-base text-[#6C757D]">
+                      {method.description}
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="space-y-2">
+                      {method.examples.map((example, idx) => (
+                        <div key={idx} className="flex items-center gap-2">
+                          <CheckCircle className="h-4 w-4 text-[#28A745] flex-shrink-0" aria-hidden="true" />
+                          <span className="text-[#6C757D]">{example}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
           </div>
+        </section>
 
-          <div className="grid md:grid-cols-2 gap-8">
-            {monitoringMethods.map((method, index) => (
-              <Card key={index} className="bg-white border-[#E5E7EB] hover:border-[#4ECDC4] transition-colors">
-                <CardHeader>
-                  <div className="flex items-center gap-3 mb-2">
-                    {method.icon}
-                    <CardTitle className="text-xl font-semibold text-[#343A40]">
-                      {method.title}
-                    </CardTitle>
-                  </div>
-                  <CardDescription className="text-base text-[#6C757D]">
-                    {method.description}
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div className="space-y-2">
-                    {method.examples.map((example, idx) => (
-                      <div key={idx} className="flex items-center gap-2">
-                        <CheckCircle className="h-4 w-4 text-[#28A745] flex-shrink-0" />
-                        <span className="text-[#6C757D]">{example}</span>
+        {/* Tools and Technologies for Monitoring */}
+        <section className="py-20 bg-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-bold text-[#343A40] mb-4">
+                Tools and Technologies for Monitoring
+              </h2>
+              <p className="text-lg text-[#6C757D] max-w-3xl mx-auto">
+                Modern monitoring tools range from simple paper logs to sophisticated 
+                digital platforms that automate data collection and analysis.
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {monitoringTools.map((tool, index) => (
+                <Card key={index} className="border-[#E5E7EB]">
+                  <CardHeader className="pb-4">
+                    <div className="flex items-center gap-2 mb-2">
+                      <div className="flex items-center justify-center w-8 h-8 bg-[#52B788]/10 rounded-lg">
+                        {tool.icon}
                       </div>
-                    ))}
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
+                      <CardTitle className="text-lg font-semibold text-[#343A40]">
+                        {tool.title}
+                      </CardTitle>
+                    </div>
+                    <CardDescription className="text-sm text-[#6C757D]">
+                      {tool.description}
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="space-y-2">
+                      {tool.features.map((feature, idx) => (
+                        <div key={idx} className="flex items-start gap-2">
+                          <ArrowRight className="h-3 w-3 text-[#4ECDC4] mt-1 flex-shrink-0" aria-hidden="true" />
+                          <span className="text-sm text-[#6C757D]">{feature}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Tools and Technologies for Monitoring */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#343A40] mb-4">
-              Tools and Technologies for Monitoring
-            </h2>
-            <p className="text-lg text-[#6C757D] max-w-3xl mx-auto">
-              Modern monitoring tools range from simple paper logs to sophisticated 
-              digital platforms that automate data collection and analysis.
-            </p>
-          </div>
+        {/* Family's Role in Progress Observation */}
+        <section className="py-20 bg-[#F8F9FA]">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-bold text-[#343A40] mb-4">
+                Family's Role in Progress Observation
+              </h2>
+              <p className="text-lg text-[#6C757D] max-w-3xl mx-auto">
+                Family members provide invaluable observations that help healthcare providers 
+                understand patient progress and adjust care plans effectively.
+              </p>
+            </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {monitoringTools.map((tool, index) => (
-              <Card key={index} className="border-[#E5E7EB]">
-                <CardHeader className="pb-4">
-                  <div className="flex items-center gap-2 mb-2">
-                    <div className="flex items-center justify-center w-8 h-8 bg-[#52B788]/10 rounded-lg">
-                      {tool.icon}
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {observationAreas.map((area, index) => (
+                <Card key={index} className="bg-white border-[#E5E7EB]">
+                  <CardHeader className="pb-4">
+                    <div className="flex items-center justify-between mb-2">
+                      <Badge className={area.badgeColor}>
+                        {area.badge}
+                      </Badge>
+                      <Clock className="h-4 w-4 text-[#6C757D]" aria-hidden="true" />
                     </div>
                     <CardTitle className="text-lg font-semibold text-[#343A40]">
-                      {tool.title}
+                      {area.category}
                     </CardTitle>
-                  </div>
-                  <CardDescription className="text-sm text-[#6C757D]">
-                    {tool.description}
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div className="space-y-2">
-                    {tool.features.map((feature, idx) => (
-                      <div key={idx} className="flex items-start gap-2">
-                        <ArrowRight className="h-3 w-3 text-[#4ECDC4] mt-1 flex-shrink-0" />
-                        <span className="text-sm text-[#6C757D]">{feature}</span>
-                      </div>
-                    ))}
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Family's Role in Progress Observation */}
-      <section className="py-20 bg-[#F8F9FA]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#343A40] mb-4">
-              Familys Role in Progress Observation
-            </h2>
-            <p className="text-lg text-[#6C757D] max-w-3xl mx-auto">
-              Family members provide invaluable observations that help healthcare providers 
-              understand patient progress and adjust care plans effectively.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {observationAreas.map((area, index) => (
-              <Card key={index} className="bg-white border-[#E5E7EB]">
-                <CardHeader className="pb-4">
-                  <div className="flex items-center justify-between mb-2">
-                    <Badge className={area.badgeColor}>
-                      {area.badge}
-                    </Badge>
-                    <Clock className="h-4 w-4 text-[#6C757D]" />
-                  </div>
-                  <CardTitle className="text-lg font-semibold text-[#343A40]">
-                    {area.category}
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <div className="space-y-2">
-                    {area.indicators.map((indicator, idx) => (
-                      <div key={idx} className="flex items-start gap-2">
-                        <Eye className="h-3 w-3 text-[#4ECDC4] mt-1 flex-shrink-0" />
-                        <span className="text-sm text-[#6C757D]">{indicator}</span>
-                      </div>
-                    ))}
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* When to Communicate Changes to Providers */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#343A40] mb-8 text-center">
-              When to Communicate Changes to Providers
-            </h2>
-            <div className="grid md:grid-cols-2 gap-8">
-              <Card className="border-[#DC3545]/30 bg-[#DC3545]/5">
-                <CardHeader>
-                  <CardTitle className="text-xl font-semibold text-[#343A40] flex items-center gap-2">
-                    <AlertTriangle className="h-5 w-5 text-[#DC3545]" />
-                    Urgent Communication
-                  </CardTitle>
-                  <CardDescription className="text-base text-[#6C757D]">
-                    Contact healthcare providers immediately for these situations:
-                  </CardDescription>
-                </CardHeader>
-                <CardContent className="space-y-3">
-                  <div className="flex items-start gap-2">
-                    <CheckCircle className="h-4 w-4 text-[#DC3545] mt-0.5 flex-shrink-0" />
-                    <span className="text-[#6C757D]">Sudden changes in consciousness or alertness</span>
-                  </div>
-                  <div className="flex items-start gap-2">
-                    <CheckCircle className="h-4 w-4 text-[#DC3545] mt-0.5 flex-shrink-0" />
-                    <span className="text-[#6C757D]">Severe or worsening pain symptoms</span>
-                  </div>
-                  <div className="flex items-start gap-2">
-                    <CheckCircle className="h-4 w-4 text-[#DC3545] mt-0.5 flex-shrink-0" />
-                    <span className="text-[#6C757D]">Breathing difficulties or chest pain</span>
-                  </div>
-                  <div className="flex items-start gap-2">
-                    <CheckCircle className="h-4 w-4 text-[#DC3545] mt-0.5 flex-shrink-0" />
-                    <span className="text-[#6C757D]">Signs of infection or fever</span>
-                  </div>
-                  <div className="flex items-start gap-2">
-                    <CheckCircle className="h-4 w-4 text-[#DC3545] mt-0.5 flex-shrink-0" />
-                    <span className="text-[#6C757D]">Medication reactions or adverse effects</span>
-                  </div>
-                </CardContent>
-              </Card>
-
-              <Card className="border-[#FFC107]/30 bg-[#FFC107]/5">
-                <CardHeader>
-                  <CardTitle className="text-xl font-semibold text-[#343A40] flex items-center gap-2">
-                    <Clock className="h-5 w-5 text-[#856404]" />
-                    Routine Communication
-                  </CardTitle>
-                  <CardDescription className="text-base text-[#6C757D]">
-                    Schedule communication for these observations:
-                  </CardDescription>
-                </CardHeader>
-                <CardContent className="space-y-3">
-                  <div className="flex items-start gap-2">
-                    <CheckCircle className="h-4 w-4 text-[#856404] mt-0.5 flex-shrink-0" />
-                    <span className="text-[#6C757D]">Gradual changes in appetite or weight</span>
-                  </div>
-                  <div className="flex items-start gap-2">
-                    <CheckCircle className="h-4 w-4 text-[#856404] mt-0.5 flex-shrink-0" />
-                    <span className="text-[#6C757D]">Mood or behavioral pattern changes</span>
-                  </div>
-                  <div className="flex items-start gap-2">
-                    <CheckCircle className="h-4 w-4 text-[#856404] mt-0.5 flex-shrink-0" />
-                    <span className="text-[#6C757D]">Sleep pattern disturbances</span>
-                  </div>
-                  <div className="flex items-start gap-2">
-                    <CheckCircle className="h-4 w-4 text-[#856404] mt-0.5 flex-shrink-0" />
-                    <span className="text-[#6C757D]">Changes in functional abilities</span>
-                  </div>
-                  <div className="flex items-start gap-2">
-                    <CheckCircle className="h-4 w-4 text-[#856404] mt-0.5 flex-shrink-0" />
-                    <span className="text-[#6C757D]">Questions about treatment effectiveness</span>
-                  </div>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Understanding Care Plan Adjustments */}
-      <section className="py-20 bg-[#F8F9FA]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#343A40] mb-8 text-center">
-              Understanding Care Plan Adjustments
-            </h2>
-            <div className="space-y-8">
-              <Card className="border-[#E5E7EB]">
-                <CardHeader>
-                  <CardTitle className="text-xl font-semibold text-[#343A40] flex items-center gap-2">
-                    <Target className="h-5 w-5 text-[#4ECDC4]" />
-                    When Care Plans Change
-                  </CardTitle>
-                </CardHeader>
-                <CardContent className="prose max-w-none text-[#6C757D]">
-                  <p>
-                    Care plans are living documents that evolve based on patient progress, 
-                    changing needs, and response to treatments. Regular monitoring data helps 
-                    healthcare teams identify when modifications are needed to optimize care 
-                    outcomes and patient quality of life.
-                  </p>
-                </CardContent>
-              </Card>
-
-              <Card className="border-[#E5E7EB]">
-                <CardHeader>
-                  <CardTitle className="text-xl font-semibold text-[#343A40] flex items-center gap-2">
-                    <MessageCircle className="h-5 w-5 text-[#4ECDC4]" />
-                    Participating in Care Plan Reviews
-                  </CardTitle>
-                </CardHeader>
-                <CardContent className="prose max-w-none text-[#6C757D]">
-                  <p>
-                    Family input is valuable during care plan reviews. Come prepared with 
-                    specific observations, questions about treatment goals, and feedback 
-                    about whats working well or causing challenges. Your daily observations 
-                    provide insights that clinical assessments might miss.
-                  </p>
-                </CardContent>
-              </Card>
-
-              <Card className="border-[#E5E7EB]">
-                <CardHeader>
-                  <CardTitle className="text-xl font-semibold text-[#343A40] flex items-center gap-2">
-                    <Settings className="h-5 w-5 text-[#4ECDC4]" />
-                    Adapting to New Care Strategies
-                  </CardTitle>
-                </CardHeader>
-                <CardContent className="prose max-w-none text-[#6C757D]">
-                  <p>
-                    When care plans change, ensure you understand new procedures, medication 
-                    adjustments, or therapy modifications. Ask for additional training if 
-                    needed and maintain open communication about any concerns or difficulties 
-                    implementing new care strategies.
-                  </p>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Documentation and Reporting */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#343A40] mb-8 text-center">
-              Documentation and Reporting Best Practices
-            </h2>
-            <div className="grid md:grid-cols-2 gap-8">
-              <Card className="border-[#E5E7EB]">
-                <CardHeader>
-                  <CardTitle className="text-xl font-semibold text-[#343A40] flex items-center gap-2">
-                    <FileText className="h-5 w-5 text-[#4ECDC4]" />
-                    Effective Documentation
-                  </CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-3">
-                  <div className="flex items-start gap-2">
-                    <CheckCircle className="h-4 w-4 text-[#28A745] mt-0.5 flex-shrink-0" />
-                    <span className="text-[#6C757D]">Record specific dates, times, and observations</span>
-                  </div>
-                  <div className="flex items-start gap-2">
-                    <CheckCircle className="h-4 w-4 text-[#28A745] mt-0.5 flex-shrink-0" />
-                    <span className="text-[#6C757D]">Use objective, factual descriptions</span>
-                  </div>
-                  <div className="flex items-start gap-2">
-                    <CheckCircle className="h-4 w-4 text-[#28A745] mt-0.5 flex-shrink-0" />
-                    <span className="text-[#6C757D]">Note patterns and trends over time</span>
-                  </div>
-                  <div className="flex items-start gap-2">
-                    <CheckCircle className="h-4 w-4 text-[#28A745] mt-0.5 flex-shrink-0" />
-                    <span className="text-[#6C757D]">Include patient responses to interventions</span>
-                  </div>
-                </CardContent>
-              </Card>
-
-              <Card className="border-[#E5E7EB]">
-                <CardHeader>
-                  <CardTitle className="text-xl font-semibold text-[#343A40] flex items-center gap-2">
-                    <MessageCircle className="h-5 w-5 text-[#4ECDC4]" />
-                    Sharing Information
-                  </CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-3">
-                  <div className="flex items-start gap-2">
-                    <ArrowRight className="h-4 w-4 text-[#4ECDC4] mt-0.5 flex-shrink-0" />
-                    <span className="text-[#6C757D]">Organize information before provider meetings</span>
-                  </div>
-                  <div className="flex items-start gap-2">
-                    <ArrowRight className="h-4 w-4 text-[#4ECDC4] mt-0.5 flex-shrink-0" />
-                    <span className="text-[#6C757D]">Use clear, concise language</span>
-                  </div>
-                  <div className="flex items-start gap-2">
-                    <ArrowRight className="h-4 w-4 text-[#4ECDC4] mt-0.5 flex-shrink-0" />
-                    <span className="text-[#6C757D]">Prioritize most important observations</span>
-                  </div>
-                  <div className="flex items-start gap-2">
-                    <ArrowRight className="h-4 w-4 text-[#4ECDC4] mt-0.5 flex-shrink-0" />
-                    <span className="text-[#6C757D]">Maintain patient privacy and confidentiality</span>
-                  </div>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Technology Solutions for Monitoring */}
-      <section className="py-20 bg-[#F8F9FA]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#343A40] mb-4">
-              Technology Solutions for Monitoring
-            </h2>
-            <p className="text-lg text-[#6C757D] max-w-3xl mx-auto">
-              Modern technology offers sophisticated tools to enhance monitoring 
-              capabilities and improve care coordination.
-            </p>
-          </div>
-
-          <div className="grid lg:grid-cols-3 gap-8">
-            {technologySolutions.map((solution, index) => (
-              <Card key={index} className="bg-white border-[#E5E7EB]">
-                <CardHeader>
-                  <div className="flex items-center gap-3 mb-2">
-                    <div className="flex items-center justify-center w-8 h-8 bg-[#007BFF]/10 rounded-lg">
-                      {solution.icon}
+                  </CardHeader>
+                  <CardContent>
+                    <div className="space-y-2">
+                      {area.indicators.map((indicator, idx) => (
+                        <div key={idx} className="flex items-start gap-2">
+                          <Eye className="h-3 w-3 text-[#4ECDC4] mt-1 flex-shrink-0" aria-hidden="true" />
+                          <span className="text-sm text-[#6C757D]">{indicator}</span>
+                        </div>
+                      ))}
                     </div>
-                    <CardTitle className="text-lg font-semibold text-[#343A40]">
-                      {solution.title}
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* When to Communicate Changes to Providers */}
+        <section className="py-20 bg-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-4xl mx-auto">
+              <h2 className="text-3xl md:text-4xl font-bold text-[#343A40] mb-8 text-center">
+                When to Communicate Changes to Providers
+              </h2>
+              <div className="grid md:grid-cols-2 gap-8">
+                <Card className="border-[#DC3545]/30 bg-[#DC3545]/5">
+                  <CardHeader>
+                    <CardTitle className="text-xl font-semibold text-[#343A40] flex items-center gap-2">
+                      <AlertTriangle className="h-5 w-5 text-[#DC3545]" aria-hidden="true" />
+                      Urgent Communication
                     </CardTitle>
-                  </div>
-                  <CardDescription className="text-base text-[#6C757D]">
-                    {solution.description}
-                  </CardDescription>
+                    <CardDescription className="text-base text-[#6C757D]">
+                      Contact healthcare providers immediately for these situations:
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent className="space-y-3">
+                    <div className="flex items-start gap-2">
+                      <CheckCircle className="h-4 w-4 text-[#DC3545] mt-0.5 flex-shrink-0" aria-hidden="true" />
+                      <span className="text-[#6C757D]">Sudden changes in consciousness or alertness</span>
+                    </div>
+                    <div className="flex items-start gap-2">
+                      <CheckCircle className="h-4 w-4 text-[#DC3545] mt-0.5 flex-shrink-0" aria-hidden="true" />
+                      <span className="text-[#6C757D]">Severe or worsening pain symptoms</span>
+                    </div>
+                    <div className="flex items-start gap-2">
+                      <CheckCircle className="h-4 w-4 text-[#DC3545] mt-0.5 flex-shrink-0" aria-hidden="true" />
+                      <span className="text-[#6C757D]">Breathing difficulties or chest pain</span>
+                    </div>
+                    <div className="flex items-start gap-2">
+                      <CheckCircle className="h-4 w-4 text-[#DC3545] mt-0.5 flex-shrink-0" aria-hidden="true" />
+                      <span className="text-[#6C757D]">Signs of infection or fever</span>
+                    </div>
+                    <div className="flex items-start gap-2">
+                      <CheckCircle className="h-4 w-4 text-[#DC3545] mt-0.5 flex-shrink-0" aria-hidden="true" />
+                      <span className="text-[#6C757D]">Medication reactions or adverse effects</span>
+                    </div>
+                  </CardContent>
+                </Card>
+
+                <Card className="border-[#FFC107]/30 bg-[#FFC107]/5">
+                  <CardHeader>
+                    <CardTitle className="text-xl font-semibold text-[#343A40] flex items-center gap-2">
+                      <Clock className="h-5 w-5 text-[#856404]" aria-hidden="true" />
+                      Routine Communication
+                    </CardTitle>
+                    <CardDescription className="text-base text-[#6C757D]">
+                      Schedule communication for these observations:
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent className="space-y-3">
+                    <div className="flex items-start gap-2">
+                      <CheckCircle className="h-4 w-4 text-[#856404] mt-0.5 flex-shrink-0" aria-hidden="true" />
+                      <span className="text-[#6C757D]">Gradual changes in appetite or weight</span>
+                    </div>
+                    <div className="flex items-start gap-2">
+                      <CheckCircle className="h-4 w-4 text-[#856404] mt-0.5 flex-shrink-0" aria-hidden="true" />
+                      <span className="text-[#6C757D]">Mood or behavioral pattern changes</span>
+                    </div>
+                    <div className="flex items-start gap-2">
+                      <CheckCircle className="h-4 w-4 text-[#856404] mt-0.5 flex-shrink-0" aria-hidden="true" />
+                      <span className="text-[#6C757D]">Sleep pattern disturbances</span>
+                    </div>
+                    <div className="flex items-start gap-2">
+                      <CheckCircle className="h-4 w-4 text-[#856404] mt-0.5 flex-shrink-0" aria-hidden="true" />
+                      <span className="text-[#6C757D]">Changes in functional abilities</span>
+                    </div>
+                    <div className="flex items-start gap-2">
+                      <CheckCircle className="h-4 w-4 text-[#856404] mt-0.5 flex-shrink-0" aria-hidden="true" />
+                      <span className="text-[#6C757D]">Questions about treatment effectiveness</span>
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Understanding Care Plan Adjustments */}
+        <section className="py-20 bg-[#F8F9FA]">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-4xl mx-auto">
+              <h2 className="text-3xl md:text-4xl font-bold text-[#343A40] mb-8 text-center">
+                Understanding Care Plan Adjustments
+              </h2>
+              <div className="space-y-8">
+                <Card className="border-[#E5E7EB]">
+                  <CardHeader>
+                    <CardTitle className="text-xl font-semibold text-[#343A40] flex items-center gap-2">
+                      <Target className="h-5 w-5 text-[#4ECDC4]" aria-hidden="true" />
+                      When Care Plans Change
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent className="prose max-w-none text-[#6C757D]">
+                    <p>
+                      Care plans are living documents that evolve based on patient progress, 
+                      changing needs, and response to treatments. Regular monitoring data helps 
+                      healthcare teams identify when modifications are needed to optimize care 
+                      outcomes and patient quality of life.
+                    </p>
+                  </CardContent>
+                </Card>
+
+                <Card className="border-[#E5E7EB]">
+                  <CardHeader>
+                    <CardTitle className="text-xl font-semibold text-[#343A40] flex items-center gap-2">
+                      <MessageCircle className="h-5 w-5 text-[#4ECDC4]" aria-hidden="true" />
+                      Participating in Care Plan Reviews
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent className="prose max-w-none text-[#6C757D]">
+                    <p>
+                      Family input is valuable during care plan reviews. Come prepared with 
+                      specific observations, questions about treatment goals, and feedback 
+                      about what's working well or causing challenges. Your daily observations 
+                      provide insights that clinical assessments might miss.
+                    </p>
+                  </CardContent>
+                </Card>
+
+                <Card className="border-[#E5E7EB]">
+                  <CardHeader>
+                    <CardTitle className="text-xl font-semibold text-[#343A40] flex items-center gap-2">
+                      <Settings className="h-5 w-5 text-[#4ECDC4]" aria-hidden="true" />
+                      Adapting to New Care Strategies
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent className="prose max-w-none text-[#6C757D]">
+                    <p>
+                      When care plans change, ensure you understand new procedures, medication 
+                      adjustments, or therapy modifications. Ask for additional training if 
+                      needed and maintain open communication about any concerns or difficulties 
+                      implementing new care strategies.
+                    </p>
+                  </CardContent>
+                </Card>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Documentation and Reporting */}
+        <section className="py-20 bg-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-4xl mx-auto">
+              <h2 className="text-3xl md:text-4xl font-bold text-[#343A40] mb-8 text-center">
+                Documentation and Reporting Best Practices
+              </h2>
+              <div className="grid md:grid-cols-2 gap-8">
+                <Card className="border-[#E5E7EB]">
+                  <CardHeader>
+                    <CardTitle className="text-xl font-semibold text-[#343A40] flex items-center gap-2">
+                      <FileText className="h-5 w-5 text-[#4ECDC4]" aria-hidden="true" />
+                      Effective Documentation
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent className="space-y-3">
+                    <div className="flex items-start gap-2">
+                      <CheckCircle className="h-4 w-4 text-[#28A745] mt-0.5 flex-shrink-0" aria-hidden="true" />
+                      <span className="text-[#6C757D]">Record specific dates, times, and observations</span>
+                    </div>
+                    <div className="flex items-start gap-2">
+                      <CheckCircle className="h-4 w-4 text-[#28A745] mt-0.5 flex-shrink-0" aria-hidden="true" />
+                      <span className="text-[#6C757D]">Use objective, factual descriptions</span>
+                    </div>
+                    <div className="flex items-start gap-2">
+                      <CheckCircle className="h-4 w-4 text-[#28A745] mt-0.5 flex-shrink-0" aria-hidden="true" />
+                      <span className="text-[#6C757D]">Note patterns and trends over time</span>
+                    </div>
+                    <div className="flex items-start gap-2">
+                      <CheckCircle className="h-4 w-4 text-[#28A745] mt-0.5 flex-shrink-0" aria-hidden="true" />
+                      <span className="text-[#6C757D]">Include patient responses to interventions</span>
+                    </div>
+                  </CardContent>
+                </Card>
+
+                <Card className="border-[#E5E7EB]">
+                  <CardHeader>
+                    <CardTitle className="text-xl font-semibold text-[#343A40] flex items-center gap-2">
+                      <MessageCircle className="h-5 w-5 text-[#4ECDC4]" aria-hidden="true" />
+                      Sharing Information
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent className="space-y-3">
+                    <div className="flex items-start gap-2">
+                      <ArrowRight className="h-4 w-4 text-[#4ECDC4] mt-0.5 flex-shrink-0" aria-hidden="true" />
+                      <span className="text-[#6C757D]">Organize information before provider meetings</span>
+                    </div>
+                    <div className="flex items-start gap-2">
+                      <ArrowRight className="h-4 w-4 text-[#4ECDC4] mt-0.5 flex-shrink-0" aria-hidden="true" />
+                      <span className="text-[#6C757D]">Use clear, concise language</span>
+                    </div>
+                    <div className="flex items-start gap-2">
+                      <ArrowRight className="h-4 w-4 text-[#4ECDC4] mt-0.5 flex-shrink-0" aria-hidden="true" />
+                      <span className="text-[#6C757D]">Prioritize most important observations</span>
+                    </div>
+                    <div className="flex items-start gap-2">
+                      <ArrowRight className="h-4 w-4 text-[#4ECDC4] mt-0.5 flex-shrink-0" aria-hidden="true" />
+                      <span className="text-[#6C757D]">Maintain patient privacy and confidentiality</span>
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Technology Solutions for Monitoring */}
+        <section className="py-20 bg-[#F8F9FA]">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-bold text-[#343A40] mb-4">
+                Technology Solutions for Monitoring
+              </h2>
+              <p className="text-lg text-[#6C757D] max-w-3xl mx-auto">
+                Modern technology offers sophisticated tools to enhance monitoring 
+                capabilities and improve care coordination.
+              </p>
+            </div>
+
+            <div className="grid lg:grid-cols-3 gap-8">
+              {technologySolutions.map((solution, index) => (
+                <Card key={index} className="bg-white border-[#E5E7EB]">
+                  <CardHeader>
+                    <div className="flex items-center gap-3 mb-2">
+                      <div className="flex items-center justify-center w-8 h-8 bg-[#007BFF]/10 rounded-lg">
+                        {solution.icon}
+                      </div>
+                      <CardTitle className="text-lg font-semibold text-[#343A40]">
+                        {solution.title}
+                      </CardTitle>
+                    </div>
+                    <CardDescription className="text-base text-[#6C757D]">
+                      {solution.description}
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="space-y-2">
+                      {solution.benefits.map((benefit, idx) => (
+                        <div key={idx} className="flex items-start gap-2">
+                          <CheckCircle className="h-4 w-4 text-[#28A745] mt-0.5 flex-shrink-0" aria-hidden="true" />
+                          <span className="text-sm text-[#6C757D]">{benefit}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+
+            <div className="mt-12 max-w-4xl mx-auto">
+              <Card className="border-[#007BFF]/30 bg-gradient-to-r from-[#007BFF]/5 to-[#4ECDC4]/5">
+                <CardHeader>
+                  <CardTitle className="text-xl font-semibold text-[#343A40] flex items-center gap-2">
+                    <HelpCircle className="h-5 w-5 text-[#007BFF]" aria-hidden="true" />
+                    Choosing the Right Technology
+                  </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <div className="space-y-2">
-                    {solution.benefits.map((benefit, idx) => (
-                      <div key={idx} className="flex items-start gap-2">
-                        <CheckCircle className="h-4 w-4 text-[#28A745] mt-0.5 flex-shrink-0" />
-                        <span className="text-sm text-[#6C757D]">{benefit}</span>
+                  <div className="grid md:grid-cols-2 gap-6">
+                    <div className="space-y-3">
+                      <h3 className="font-medium text-[#343A40]">Consider These Factors:</h3>
+                      <div className="space-y-2">
+                        <div className="flex items-start gap-2">
+                          <CheckCircle className="h-4 w-4 text-[#28A745] mt-0.5 flex-shrink-0" aria-hidden="true" />
+                          <span className="text-sm text-[#6C757D]">Patient comfort with technology</span>
+                        </div>
+                        <div className="flex items-start gap-2">
+                          <CheckCircle className="h-4 w-4 text-[#28A745] mt-0.5 flex-shrink-0" aria-hidden="true" />
+                          <span className="text-sm text-[#6C757D]">Integration with existing healthcare systems</span>
+                        </div>
+                        <div className="flex items-start gap-2">
+                          <CheckCircle className="h-4 w-4 text-[#28A745] mt-0.5 flex-shrink-0" aria-hidden="true" />
+                          <span className="text-sm text-[#6C757D]">Cost and insurance coverage</span>
+                        </div>
                       </div>
-                    ))}
+                    </div>
+                    <div className="space-y-3">
+                      <h3 className="font-medium text-[#343A40]">Benefits of Digital Solutions:</h3>
+                      <div className="space-y-2">
+                        <div className="flex items-start gap-2">
+                          <ArrowRight className="h-4 w-4 text-[#4ECDC4] mt-0.5 flex-shrink-0" aria-hidden="true" />
+                          <span className="text-sm text-[#6C757D]">Automated data collection and analysis</span>
+                        </div>
+                        <div className="flex items-start gap-2">
+                          <ArrowRight className="h-4 w-4 text-[#4ECDC4] mt-0.5 flex-shrink-0" aria-hidden="true" />
+                          <span className="text-sm text-[#6C757D]">Real-time alerts and notifications</span>
+                        </div>
+                        <div className="flex items-start gap-2">
+                          <ArrowRight className="h-4 w-4 text-[#4ECDC4] mt-0.5 flex-shrink-0" aria-hidden="true" />
+                          <span className="text-sm text-[#6C757D]">Easier sharing with healthcare providers</span>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </CardContent>
               </Card>
-            ))}
+            </div>
           </div>
-
-          <div className="mt-12 max-w-4xl mx-auto">
-            <Card className="border-[#007BFF]/30 bg-gradient-to-r from-[#007BFF]/5 to-[#4ECDC4]/5">
-              <CardHeader>
-                <CardTitle className="text-xl font-semibold text-[#343A40] flex items-center gap-2">
-                  <HelpCircle className="h-5 w-5 text-[#007BFF]" />
-                  Choosing the Right Technology
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div className="space-y-3">
-                    <h4 className="font-medium text-[#343A40]">Consider These Factors:</h4>
-                    <div className="space-y-2">
-                      <div className="flex items-start gap-2">
-                        <CheckCircle className="h-4 w-4 text-[#28A745] mt-0.5 flex-shrink-0" />
-                        <span className="text-sm text-[#6C757D]">Patient comfort with technology</span>
-                      </div>
-                      <div className="flex items-start gap-2">
-                        <CheckCircle className="h-4 w-4 text-[#28A745] mt-0.5 flex-shrink-0" />
-                        <span className="text-sm text-[#6C757D]">Integration with existing healthcare systems</span>
-                      </div>
-                      <div className="flex items-start gap-2">
-                        <CheckCircle className="h-4 w-4 text-[#28A745] mt-0.5 flex-shrink-0" />
-                        <span className="text-sm text-[#6C757D]">Cost and insurance coverage</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="space-y-3">
-                    <h4 className="font-medium text-[#343A40]">Benefits of Digital Solutions:</h4>
-                    <div className="space-y-2">
-                      <div className="flex items-start gap-2">
-                        <ArrowRight className="h-4 w-4 text-[#4ECDC4] mt-0.5 flex-shrink-0" />
-                        <span className="text-sm text-[#6C757D]">Automated data collection and analysis</span>
-                      </div>
-                      <div className="flex items-start gap-2">
-                        <ArrowRight className="h-4 w-4 text-[#4ECDC4] mt-0.5 flex-shrink-0" />
-                        <span className="text-sm text-[#6C757D]">Real-time alerts and notifications</span>
-                      </div>
-                      <div className="flex items-start gap-2">
-                        <ArrowRight className="h-4 w-4 text-[#4ECDC4] mt-0.5 flex-shrink-0" />
-                        <span className="text-sm text-[#6C757D]">Easier sharing with healthcare providers</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
+        </section>
+      </main>
 
       {/* Important Notice */}
-      <section className="py-16 bg-[#FFF3CD] border-l-4 border-[#FFC107]">
+      <aside className="py-16 bg-[#FFF3CD] border-l-4 border-[#FFC107]" role="complementary" aria-label="Important monitoring notice">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-start gap-4">
-            <AlertTriangle className="h-6 w-6 text-[#FFC107] mt-1 flex-shrink-0" />
+            <AlertTriangle className="h-6 w-6 text-[#FFC107] mt-1 flex-shrink-0" aria-hidden="true" />
             <div>
               <h3 className="text-lg font-semibold text-[#343A40] mb-2">
                 Important Monitoring Notice
@@ -785,7 +867,7 @@ export default function ProgressMonitoringPage(): JSX.Element {
             </div>
           </div>
         </div>
-      </section>
+      </aside>
 
       {/* External Resources */}
       <section className="py-20 bg-white">
@@ -804,7 +886,7 @@ export default function ProgressMonitoringPage(): JSX.Element {
             <Card className="border-[#4ECDC4] bg-gradient-to-r from-[#4ECDC4]/5 to-[#52B788]/5">
               <CardHeader>
                 <CardTitle className="text-xl font-semibold text-[#343A40] flex items-center gap-2">
-                  <ExternalLink className="h-5 w-5 text-[#4ECDC4]" />
+                  <ExternalLink className="h-5 w-5 text-[#4ECDC4]" aria-hidden="true" />
                   Agency for Healthcare Research and Quality
                 </CardTitle>
               </CardHeader>
@@ -812,9 +894,19 @@ export default function ProgressMonitoringPage(): JSX.Element {
                 <p className="text-[#6C757D] mb-4">
                   Federal agency providing evidence-based healthcare quality tools and monitoring resources.
                 </p>
-                <Button variant="outline" className="border-[#4ECDC4] text-[#4ECDC4] hover:bg-[#4ECDC4] hover:text-white">
-                  <a href="https://www.ahrq.gov" target="_blank" rel="noopener noreferrer">
+                <Button 
+                  variant="outline" 
+                  className="border-[#4ECDC4] text-[#4ECDC4] hover:bg-[#4ECDC4] hover:text-white"
+                  aria-label="Visit Agency for Healthcare Research and Quality website (opens in new tab)"
+                >
+                  <a 
+                    href="https://www.ahrq.gov" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2"
+                  >
                     Visit Website
+                    <ExternalLink className="h-4 w-4" aria-hidden="true" />
                   </a>
                 </Button>
               </CardContent>
@@ -823,7 +915,7 @@ export default function ProgressMonitoringPage(): JSX.Element {
             <Card className="border-[#4ECDC4] bg-gradient-to-r from-[#4ECDC4]/5 to-[#52B788]/5">
               <CardHeader>
                 <CardTitle className="text-xl font-semibold text-[#343A40] flex items-center gap-2">
-                  <ExternalLink className="h-5 w-5 text-[#4ECDC4]" />
+                  <ExternalLink className="h-5 w-5 text-[#4ECDC4]" aria-hidden="true" />
                   Centers for Disease Control and Prevention
                 </CardTitle>
               </CardHeader>
@@ -831,9 +923,19 @@ export default function ProgressMonitoringPage(): JSX.Element {
                 <p className="text-[#6C757D] mb-4">
                   Health monitoring guidelines and tools for chronic disease management and prevention.
                 </p>
-                <Button variant="outline" className="border-[#4ECDC4] text-[#4ECDC4] hover:bg-[#4ECDC4] hover:text-white">
-                  <a href="https://www.cdc.gov/chronicdisease" target="_blank" rel="noopener noreferrer">
+                <Button 
+                  variant="outline" 
+                  className="border-[#4ECDC4] text-[#4ECDC4] hover:bg-[#4ECDC4] hover:text-white"
+                  aria-label="Visit CDC chronic disease resources (opens in new tab)"
+                >
+                  <a 
+                    href="https://www.cdc.gov/chronicdisease" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2"
+                  >
                     Visit Website
+                    <ExternalLink className="h-4 w-4" aria-hidden="true" />
                   </a>
                 </Button>
               </CardContent>
@@ -875,7 +977,9 @@ export default function ProgressMonitoringPage(): JSX.Element {
                     className="text-[#007BFF] hover:text-[#0056B3] p-0 h-auto font-medium"
                     asChild
                   >
-                    <a href={article.href}>Read Article →</a>
+                    <a href={article.href} aria-label={`Read article: ${article.title}`}>
+                      Read Article →
+                    </a>
                   </Button>
                 </CardContent>
               </Card>

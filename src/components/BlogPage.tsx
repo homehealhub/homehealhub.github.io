@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useMemo, useEffect } from 'react';
+import { Metadata } from 'next';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
@@ -20,6 +21,53 @@ import {
   CheckCircle,
   Loader2
 } from 'lucide-react';
+
+// SEO Metadata Configuration
+export const metadata: Metadata = {
+  title: "Healthcare Blog - Expert Articles & Tips | HomeHealHub",
+  description: "Discover expert-reviewed healthcare articles covering in-home care, medical equipment, family training, and progress monitoring. Evidence-based insights for better healthcare decisions.",
+  keywords: "home healthcare blog, medical care articles, in-home care tips, healthcare equipment guides, family caregiver training, patient monitoring",
+  openGraph: {
+    title: "Healthcare Blog - Expert Articles & Tips | HomeHealHub",
+    description: "Expert-reviewed healthcare articles and insights for families managing in-home care. Get the latest tips and best practices.",
+    type: "website",
+    siteName: "HomeHealHub"
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Healthcare Blog - Expert Articles & Tips | HomeHealHub",
+    description: "Expert-reviewed healthcare articles and insights for families managing in-home care."
+  },
+  robots: {
+    index: true,
+    follow: true
+  }
+};
+
+// JSON-LD Schema Markup
+const blogSchema = {
+  "@context": "https://schema.org",
+  "@type": "Blog",
+  "name": "HomeHealHub Blog",
+  "description": "Expert-reviewed articles about in-home healthcare, medical equipment, family training, and patient monitoring.",
+  "url": "https://homehealhub.com/blog",
+  "publisher": {
+    "@type": "Organization",
+    "name": "HomeHealHub",
+    "logo": "https://homehealhub.com/logo.png"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://homehealhub.com/blog"
+  },
+  "about": [
+    "In-home healthcare",
+    "Medical equipment setup",
+    "Family caregiver training", 
+    "Healthcare progress monitoring",
+    "Home medical visits"
+  ]
+};
 
 // Blog metadata interface
 interface BlogMetadata {
@@ -84,58 +132,63 @@ function markdownToHtml(markdown: string): string {
 
 function BlogCard({ blog, onExpand, isLoading }: BlogCardProps) {
   return (
-    <Card className="group hover:shadow-xl transition-all duration-300 bg-white border-[#E5E7EB] hover:border-[#4ECDC4] h-full cursor-pointer"
-          onClick={() => onExpand(blog.id)}>
-      <CardHeader className="pb-4">
-        <div className="flex items-start justify-between mb-3">
-          <Badge variant="secondary" className="bg-[#4ECDC4]/10 text-[#4ECDC4]">
-            {blog.category}
-          </Badge>
-          <span className="text-sm text-[#6C757D]">{blog.readTime}</span>
-        </div>
-        <CardTitle className="text-xl font-bold text-[#343A40] mb-3 group-hover:text-[#4ECDC4] transition-colors leading-tight">
-          {blog.title}
-        </CardTitle>
-        <CardDescription className="text-[#6C757D] text-base leading-relaxed">
-          {blog.excerpt}
-        </CardDescription>
-      </CardHeader>
-      <CardContent className="pt-0 flex-1 flex flex-col">
-        <div className="flex items-center justify-between text-sm text-[#6C757D] mb-4">
-          <div className="flex items-center gap-2">
-            <User className="h-4 w-4" />
-            <span>{blog.author}</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <Calendar className="h-4 w-4" />
-            <span>{new Date(blog.publishDate).toLocaleDateString()}</span>
-          </div>
-        </div>
-        <div className="flex flex-wrap gap-2 mb-4">
-          {blog.tags.map((tag, index) => (
-            <Badge key={index} variant="outline" className="text-xs border-[#E5E7EB] text-[#6C757D]">
-              {tag}
+    <article>
+      <Card className="group hover:shadow-xl transition-all duration-300 bg-white border-[#E5E7EB] hover:border-[#4ECDC4] h-full cursor-pointer"
+            onClick={() => onExpand(blog.id)}>
+        <CardHeader className="pb-4">
+          <div className="flex items-start justify-between mb-3">
+            <Badge variant="secondary" className="bg-[#4ECDC4]/10 text-[#4ECDC4]">
+              {blog.category}
             </Badge>
-          ))}
-        </div>
-        <Button 
-          className="w-full bg-[#4ECDC4] hover:bg-[#3DB5AC] text-white group-hover:shadow-lg transition-all mt-auto"
-          disabled={isLoading}
-        >
-          {isLoading ? (
-            <>
-              <Loader2 className="h-4 w-4 mr-2 animate-spin" />
-              Loading...
-            </>
-          ) : (
-            <>
-              Read Full Article
-              <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-            </>
-          )}
-        </Button>
-      </CardContent>
-    </Card>
+            <span className="text-sm text-[#6C757D]">{blog.readTime}</span>
+          </div>
+          <CardTitle className="text-xl font-bold text-[#343A40] mb-3 group-hover:text-[#4ECDC4] transition-colors leading-tight">
+            <h3>{blog.title}</h3>
+          </CardTitle>
+          <CardDescription className="text-[#6C757D] text-base leading-relaxed">
+            {blog.excerpt}
+          </CardDescription>
+        </CardHeader>
+        <CardContent className="pt-0 flex-1 flex flex-col">
+          <div className="flex items-center justify-between text-sm text-[#6C757D] mb-4">
+            <div className="flex items-center gap-2">
+              <User className="h-4 w-4" aria-hidden="true" />
+              <span>{blog.author}</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <Calendar className="h-4 w-4" aria-hidden="true" />
+              <time dateTime={blog.publishDate}>
+                {new Date(blog.publishDate).toLocaleDateString()}
+              </time>
+            </div>
+          </div>
+          <div className="flex flex-wrap gap-2 mb-4">
+            {blog.tags.map((tag, index) => (
+              <Badge key={index} variant="outline" className="text-xs border-[#E5E7EB] text-[#6C757D]">
+                {tag}
+              </Badge>
+            ))}
+          </div>
+          <Button 
+            className="w-full bg-[#4ECDC4] hover:bg-[#3DB5AC] text-white group-hover:shadow-lg transition-all mt-auto"
+            disabled={isLoading}
+            aria-label={`Read full article: ${blog.title}`}
+          >
+            {isLoading ? (
+              <>
+                <Loader2 className="h-4 w-4 mr-2 animate-spin" aria-hidden="true" />
+                Loading...
+              </>
+            ) : (
+              <>
+                Read Full Article
+                <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
+              </>
+            )}
+          </Button>
+        </CardContent>
+      </Card>
+    </article>
   );
 }
 
@@ -150,98 +203,137 @@ function ExpandedBlog({ blog, onClose, isLoading }: ExpandedBlogProps) {
     return blog.content ? markdownToHtml(blog.content) : '';
   }, [blog.content]);
 
+  // Generate individual blog schema
+  const individualBlogSchema = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": blog.title,
+    "description": blog.excerpt,
+    "author": {
+      "@type": "Person",
+      "name": blog.author
+    },
+    "datePublished": blog.publishDate,
+    "publisher": {
+      "@type": "Organization",
+      "name": "HomeHealHub",
+      "logo": "https://homehealhub.com/logo.png"
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": `https://homehealhub.com/blog/${blog.id}`
+    },
+    "keywords": blog.tags.join(", "),
+    "about": blog.category
+  };
+
   return (
-    <div className="fixed inset-0 bg-black/50 z-50 overflow-y-auto">
-      <div className="min-h-full py-8 px-4">
-        <div className="max-w-4xl mx-auto bg-white rounded-lg shadow-2xl">
-          {/* Header */}
-          <div className="p-6 border-b border-[#E5E7EB]">
-            <div className="flex items-center justify-between mb-4">
-              <Button 
-                variant="ghost" 
-                onClick={onClose}
-                className="text-[#6C757D] hover:text-[#4ECDC4]"
-              >
-                <ArrowLeft className="h-4 w-4 mr-2" />
-                Back to Blog
-              </Button>
-              <Badge className="bg-[#4ECDC4]/10 text-[#4ECDC4]">
-                {blog.category}
-              </Badge>
-            </div>
-            
-            <h1 className="text-3xl md:text-4xl font-bold text-[#343A40] mb-4 leading-tight">
-              {blog.title}
-            </h1>
-            
-            <div className="flex flex-wrap items-center gap-6 text-[#6C757D] mb-4">
-              <div className="flex items-center gap-2">
-                <User className="h-5 w-5" />
-                <span className="font-medium">{blog.author}</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Calendar className="h-5 w-5" />
-                <span>{new Date(blog.publishDate).toLocaleDateString('en-US', { 
-                  year: 'numeric', 
-                  month: 'long', 
-                  day: 'numeric' 
-                })}</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <BookOpen className="h-5 w-5" />
-                <span>{blog.readTime}</span>
-              </div>
-            </div>
-            
-            <div className="flex flex-wrap gap-2">
-              {blog.tags.map((tag, index) => (
-                <Badge key={index} variant="outline" className="border-[#4ECDC4] text-[#4ECDC4]">
-                  {tag}
+    <>
+      {/* Individual Blog Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(individualBlogSchema)
+        }}
+      />
+      
+      <div className="fixed inset-0 bg-black/50 z-50 overflow-y-auto" role="dialog" aria-modal="true" aria-labelledby="blog-title">
+        <div className="min-h-full py-8 px-4">
+          <article className="max-w-4xl mx-auto bg-white rounded-lg shadow-2xl">
+            {/* Header */}
+            <header className="p-6 border-b border-[#E5E7EB]">
+              <div className="flex items-center justify-between mb-4">
+                <Button 
+                  variant="ghost" 
+                  onClick={onClose}
+                  className="text-[#6C757D] hover:text-[#4ECDC4]"
+                  aria-label="Close article and return to blog"
+                >
+                  <ArrowLeft className="h-4 w-4 mr-2" aria-hidden="true" />
+                  Back to Blog
+                </Button>
+                <Badge className="bg-[#4ECDC4]/10 text-[#4ECDC4]">
+                  {blog.category}
                 </Badge>
-              ))}
-            </div>
-          </div>
-          
-          {/* Content */}
-          <div className="p-6">
-            {isLoading ? (
-              <div className="flex items-center justify-center py-16">
-                <Loader2 className="h-8 w-8 animate-spin text-[#4ECDC4]" />
-                <span className="ml-3 text-[#6C757D]">Loading article content...</span>
               </div>
-            ) : (
-              <div 
-                className="prose prose-lg max-w-none"
-                style={{
-                  fontSize: '16px',
-                  lineHeight: '1.7'
-                }}
-                dangerouslySetInnerHTML={{ __html: htmlContent }}
-              />
-            )}
-          </div>
-          
-          {/* Footer */}
-          <div className="p-6 border-t border-[#E5E7EB] bg-[#F8F9FA]">
-            <div className="flex items-center justify-between">
-              <div className="text-sm text-[#6C757D]">
-                Published on {new Date(blog.publishDate).toLocaleDateString('en-US', { 
-                  year: 'numeric', 
-                  month: 'long', 
-                  day: 'numeric' 
-                })}
+              
+              <h1 id="blog-title" className="text-3xl md:text-4xl font-bold text-[#343A40] mb-4 leading-tight">
+                {blog.title}
+              </h1>
+              
+              <div className="flex flex-wrap items-center gap-6 text-[#6C757D] mb-4">
+                <div className="flex items-center gap-2">
+                  <User className="h-5 w-5" aria-hidden="true" />
+                  <span className="font-medium">{blog.author}</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Calendar className="h-5 w-5" aria-hidden="true" />
+                  <time dateTime={blog.publishDate}>
+                    {new Date(blog.publishDate).toLocaleDateString('en-US', { 
+                      year: 'numeric', 
+                      month: 'long', 
+                      day: 'numeric' 
+                    })}
+                  </time>
+                </div>
+                <div className="flex items-center gap-2">
+                  <BookOpen className="h-5 w-5" aria-hidden="true" />
+                  <span>{blog.readTime}</span>
+                </div>
               </div>
-              <Button 
-                onClick={onClose}
-                className="bg-[#4ECDC4] hover:bg-[#3DB5AC] text-white"
-              >
-                Close Article
-              </Button>
-            </div>
-          </div>
+              
+              <div className="flex flex-wrap gap-2">
+                {blog.tags.map((tag, index) => (
+                  <Badge key={index} variant="outline" className="border-[#4ECDC4] text-[#4ECDC4]">
+                    {tag}
+                  </Badge>
+                ))}
+              </div>
+            </header>
+            
+            {/* Content */}
+            <main className="p-6">
+              {isLoading ? (
+                <div className="flex items-center justify-center py-16">
+                  <Loader2 className="h-8 w-8 animate-spin text-[#4ECDC4]" aria-hidden="true" />
+                  <span className="ml-3 text-[#6C757D]">Loading article content...</span>
+                </div>
+              ) : (
+                <div 
+                  className="prose prose-lg max-w-none"
+                  style={{
+                    fontSize: '16px',
+                    lineHeight: '1.7'
+                  }}
+                  dangerouslySetInnerHTML={{ __html: htmlContent }}
+                />
+              )}
+            </main>
+            
+            {/* Footer */}
+            <footer className="p-6 border-t border-[#E5E7EB] bg-[#F8F9FA]">
+              <div className="flex items-center justify-between">
+                <div className="text-sm text-[#6C757D]">
+                  Published on <time dateTime={blog.publishDate}>
+                    {new Date(blog.publishDate).toLocaleDateString('en-US', { 
+                      year: 'numeric', 
+                      month: 'long', 
+                      day: 'numeric' 
+                    })}
+                  </time>
+                </div>
+                <Button 
+                  onClick={onClose}
+                  className="bg-[#4ECDC4] hover:bg-[#3DB5AC] text-white"
+                >
+                  Close Article
+                </Button>
+              </div>
+            </footer>
+          </article>
         </div>
       </div>
-    </div>
+    </>
   );
 }
 
@@ -322,140 +414,158 @@ export default function BlogPage() {
   }, [blogData, searchTerm, selectedCategory]);
 
   return (
-    <PageTemplate currentPage="blog">
-      {/* Breadcrumb Navigation */}
-      <div className="bg-[#F8F9FA] py-4 border-b border-[#E5E7EB]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <Breadcrumb>
-            <BreadcrumbList>
-              <BreadcrumbItem>
-                <BreadcrumbLink href="/" className="text-[#6C757D] hover:text-[#4ECDC4]">
-                  Home
-                </BreadcrumbLink>
-              </BreadcrumbItem>
-              <BreadcrumbSeparator />
-              <BreadcrumbItem>
-                <BreadcrumbPage className="text-[#4ECDC4] font-medium">
-                  Blog
-                </BreadcrumbPage>
-              </BreadcrumbItem>
-            </BreadcrumbList>
-          </Breadcrumb>
-        </div>
-      </div>
+    <>
+      {/* JSON-LD Schema Markup */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(blogSchema)
+        }}
+      />
+      
+      <PageTemplate currentPage="blog">
+        <main>
+          {/* Breadcrumb Navigation */}
+          <nav aria-label="Breadcrumb" className="bg-[#F8F9FA] py-4 border-b border-[#E5E7EB]">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <Breadcrumb>
+                <BreadcrumbList>
+                  <BreadcrumbItem>
+                    <BreadcrumbLink href="/" className="text-[#6C757D] hover:text-[#4ECDC4]">
+                      Home
+                    </BreadcrumbLink>
+                  </BreadcrumbItem>
+                  <BreadcrumbSeparator />
+                  <BreadcrumbItem>
+                    <BreadcrumbPage className="text-[#4ECDC4] font-medium">
+                      Blog
+                    </BreadcrumbPage>
+                  </BreadcrumbItem>
+                </BreadcrumbList>
+              </Breadcrumb>
+            </div>
+          </nav>
 
-      {/* Hero Section */}
-      <section className="bg-gradient-to-br from-[#F8F9FA] to-white py-16 lg:py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-bold text-[#343A40] mb-6 leading-tight">
-              HomeHealHub Blog
-            </h1>
-            <p className="text-xl text-[#6C757D] mb-8 leading-relaxed">
-              Stay informed with the latest insights, tips, and best practices in home healthcare. 
-              Our expert-reviewed articles help you navigate your healthcare journey with confidence.
-            </p>
-            
-            {/* Quick Stats */}
-            <div className="flex flex-wrap justify-center items-center gap-8 text-sm text-[#6C757D] mb-8">
-              <div className="flex items-center gap-2">
-                <BookOpen className="h-5 w-5 text-[#4ECDC4]" />
-                <span>{blogData.length}+ Articles</span>
+          {/* Hero Section */}
+          <section className="bg-gradient-to-br from-[#F8F9FA] to-white py-16 lg:py-24">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="max-w-4xl mx-auto text-center">
+                <header>
+                  <h1 className="text-4xl md:text-5xl font-bold text-[#343A40] mb-6 leading-tight">
+                    HomeHealHub Blog
+                  </h1>
+                  <p className="text-xl text-[#6C757D] mb-8 leading-relaxed">
+                    Stay informed with the latest insights, tips, and best practices in home healthcare. 
+                    Our expert-reviewed articles help you navigate your healthcare journey with confidence.
+                  </p>
+                </header>
+                
+                {/* Quick Stats */}
+                <div className="flex flex-wrap justify-center items-center gap-8 text-sm text-[#6C757D] mb-8">
+                  <div className="flex items-center gap-2">
+                    <BookOpen className="h-5 w-5 text-[#4ECDC4]" aria-hidden="true" />
+                    <span>{blogData.length}+ Articles</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <Heart className="h-5 w-5 text-[#4ECDC4]" aria-hidden="true" />
+                    <span>Expert Reviewed</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <CheckCircle className="h-5 w-5 text-[#4ECDC4]" aria-hidden="true" />
+                    <span>Evidence-Based</span>
+                  </div>
+                </div>
               </div>
-              <div className="flex items-center gap-2">
-                <Heart className="h-5 w-5 text-[#4ECDC4]" />
-                <span>Expert Reviewed</span>
+            </div>
+          </section>
+
+          {/* Search and Filter Section */}
+          <section className="py-12 bg-white border-b border-[#E5E7EB]">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="max-w-2xl mx-auto">
+                <h2 className="sr-only">Search and Filter Articles</h2>
+                <div className="relative mb-6">
+                  <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-[#6C757D]" aria-hidden="true" />
+                  <Input
+                    type="text"
+                    placeholder="Search articles..."
+                    value={searchTerm}
+                    onChange={(e) => setSearchTerm(e.target.value)}
+                    className="pl-10 h-12 text-lg border-[#E5E7EB] focus:border-[#4ECDC4] focus:ring-[#4ECDC4]"
+                    aria-label="Search blog articles"
+                  />
+                </div>
+                
+                {/* Category Filters */}
+                <div className="flex flex-wrap justify-center gap-2" role="group" aria-label="Article categories">
+                  {categories.map((category) => (
+                    <Button
+                      key={category}
+                      variant={selectedCategory === category ? "default" : "outline"}
+                      size="sm"
+                      onClick={() => setSelectedCategory(category)}
+                      className={selectedCategory === category 
+                        ? "bg-[#4ECDC4] hover:bg-[#3DB5AC] text-white" 
+                        : "border-[#E5E7EB] text-[#6C757D] hover:border-[#4ECDC4] hover:text-[#4ECDC4]"
+                      }
+                      aria-pressed={selectedCategory === category}
+                    >
+                      <Filter className="h-4 w-4 mr-2" aria-hidden="true" />
+                      {category}
+                    </Button>
+                  ))}
+                </div>
               </div>
-              <div className="flex items-center gap-2">
-                <CheckCircle className="h-5 w-5 text-[#4ECDC4]" />
-                <span>Evidence-Based</span>
-              </div>
             </div>
-          </div>
-        </div>
-      </section>
+          </section>
 
-      {/* Search and Filter Section */}
-      <section className="py-12 bg-white border-b border-[#E5E7EB]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-2xl mx-auto">
-            <div className="relative mb-6">
-              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-[#6C757D]" />
-              <Input
-                type="text"
-                placeholder="Search articles..."
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-                className="pl-10 h-12 text-lg border-[#E5E7EB] focus:border-[#4ECDC4] focus:ring-[#4ECDC4]"
-              />
+          {/* Blog Grid */}
+          <section className="py-20 bg-[#F8F9FA]">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <h2 className="sr-only">Blog Articles</h2>
+              {isLoading ? (
+                <div className="flex items-center justify-center py-16">
+                  <Loader2 className="h-8 w-8 animate-spin text-[#4ECDC4]" aria-hidden="true" />
+                  <span className="ml-3 text-[#6C757D]">Loading blog articles...</span>
+                </div>
+              ) : filteredBlogs.length > 0 ? (
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                  {filteredBlogs.map((blog) => (
+                    <BlogCard 
+                      key={blog.id} 
+                      blog={blog} 
+                      onExpand={loadBlogContent}
+                      isLoading={loadingBlogId === blog.id}
+                    />
+                  ))}
+                </div>
+              ) : (
+                <div className="text-center py-16">
+                  <BookOpen className="h-16 w-16 text-[#6C757D] mx-auto mb-4" aria-hidden="true" />
+                  <h3 className="text-xl font-semibold text-[#343A40] mb-2">No articles found</h3>
+                  <p className="text-[#6C757D] mb-6">Try adjusting your search terms or category filter.</p>
+                  <Button 
+                    onClick={() => { setSearchTerm(''); setSelectedCategory('All'); }}
+                    variant="outline"
+                    className="border-[#4ECDC4] text-[#4ECDC4] hover:bg-[#4ECDC4] hover:text-white"
+                  >
+                    Clear Filters
+                  </Button>
+                </div>
+              )}
             </div>
-            
-            {/* Category Filters */}
-            <div className="flex flex-wrap justify-center gap-2">
-              {categories.map((category) => (
-                <Button
-                  key={category}
-                  variant={selectedCategory === category ? "default" : "outline"}
-                  size="sm"
-                  onClick={() => setSelectedCategory(category)}
-                  className={selectedCategory === category 
-                    ? "bg-[#4ECDC4] hover:bg-[#3DB5AC] text-white" 
-                    : "border-[#E5E7EB] text-[#6C757D] hover:border-[#4ECDC4] hover:text-[#4ECDC4]"
-                  }
-                >
-                  <Filter className="h-4 w-4 mr-2" />
-                  {category}
-                </Button>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+          </section>
+        </main>
 
-      {/* Blog Grid */}
-      <section className="py-20 bg-[#F8F9FA]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {isLoading ? (
-            <div className="flex items-center justify-center py-16">
-              <Loader2 className="h-8 w-8 animate-spin text-[#4ECDC4]" />
-              <span className="ml-3 text-[#6C757D]">Loading blog articles...</span>
-            </div>
-          ) : filteredBlogs.length > 0 ? (
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {filteredBlogs.map((blog) => (
-                <BlogCard 
-                  key={blog.id} 
-                  blog={blog} 
-                  onExpand={loadBlogContent}
-                  isLoading={loadingBlogId === blog.id}
-                />
-              ))}
-            </div>
-          ) : (
-            <div className="text-center py-16">
-              <BookOpen className="h-16 w-16 text-[#6C757D] mx-auto mb-4" />
-              <h3 className="text-xl font-semibold text-[#343A40] mb-2">No articles found</h3>
-              <p className="text-[#6C757D] mb-6">Try adjusting your search terms or category filter.</p>
-              <Button 
-                onClick={() => { setSearchTerm(''); setSelectedCategory('All'); }}
-                variant="outline"
-                className="border-[#4ECDC4] text-[#4ECDC4] hover:bg-[#4ECDC4] hover:text-white"
-              >
-                Clear Filters
-              </Button>
-            </div>
-          )}
-        </div>
-      </section>
-
-      {/* Expanded Blog Modal */}
-      {expandedBlog && (
-        <ExpandedBlog 
-          blog={expandedBlog} 
-          onClose={() => setExpandedBlog(null)}
-          isLoading={contentLoading}
-        />
-      )}
-    </PageTemplate>
+        {/* Expanded Blog Modal */}
+        {expandedBlog && (
+          <ExpandedBlog 
+            blog={expandedBlog} 
+            onClose={() => setExpandedBlog(null)}
+            isLoading={contentLoading}
+          />
+        )}
+      </PageTemplate>
+    </>
   );
 }
