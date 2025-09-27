@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     title: "About HomeHealHub | Our Mission & Healthcare Education Standards",
     description: "Learn about HomeHealHub's mission to provide evidence-based home healthcare education and our commitment to helping families navigate home care options.",
     type: "website",
-    url: "https://homehealhub.com/about",
+    url: "https://homehealhub.org/about",
     siteName: "HomeHealHub"
   },
   twitter: {
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     description: "Learn about HomeHealHub's mission to provide evidence-based home healthcare education and our commitment to helping families navigate home care options."
   },
   alternates: {
-    canonical: "https://homehealhub.com/about"
+    canonical: "https://homehealhub.org/about"
   },
   robots: {
     index: true,
@@ -46,12 +46,12 @@ export default function About(): JSX.Element {
     "@type": "AboutPage",
     "name": "About HomeHealHub",
     "description": "Learn about HomeHealHub's mission to provide evidence-based home healthcare education and our commitment to helping families navigate home care options safely.",
-    "url": "https://homehealhub.com/about",
+    "url": "https://homehealhub.org/about",
     "mainEntity": {
       "@type": "Organization",
       "name": "HomeHealHub",
       "description": "Educational platform providing evidence-based resources for home healthcare",
-      "url": "https://homehealhub.com",
+      "url": "https://homehealhub.org",
       "foundingDate": "2024",
       "mission": "HomeHealHub provides educational resources and information about in-home healthcare services, helping families understand their options and connect with quality care providers.",
       "knowsAbout": [
@@ -84,13 +84,13 @@ export default function About(): JSX.Element {
           "@type": "ListItem",
           "position": 1,
           "name": "Home",
-          "item": "https://homehealhub.com"
+          "item": "https://homehealhub.org"
         },
         {
           "@type": "ListItem",
           "position": 2,
           "name": "About",
-          "item": "https://homehealhub.com/about"
+          "item": "https://homehealhub.org/about"
         }
       ]
     },

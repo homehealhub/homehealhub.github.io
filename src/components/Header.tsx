@@ -15,30 +15,30 @@ const navigationStructuredData = {
   "@context": "https://schema.org",
   "@type": "SiteNavigationElement",
   "name": "Main Navigation",
-  "url": "https://homehealhub.com",
+  "url": "https://homehealhub.org",
   "hasPart": [
     {
       "@type": "WebPage",
       "name": "Home Healthcare Topics",
-      "url": "https://homehealhub.com/topics",
+      "url": "https://homehealhub.org/topics",
       "description": "Educational guides on in-home visits, equipment setup, family training, and progress monitoring"
     },
     {
       "@type": "WebPage", 
       "name": "Healthcare Blog",
-      "url": "https://homehealhub.com/blog",
+      "url": "https://homehealhub.org/blog",
       "description": "Latest articles and insights on home healthcare practices and family caregiving"
     },
     {
       "@type": "WebPage",
       "name": "Healthcare Resources",
-      "url": "https://homehealhub.com/resources", 
+      "url": "https://homehealhub.org/resources", 
       "description": "Directory of trusted home healthcare providers and support organizations"
     },
     {
       "@type": "WebPage",
       "name": "About HomeHealHub",
-      "url": "https://homehealhub.com/about",
+      "url": "https://homehealhub.org/about",
       "description": "Learn about our mission to provide educational resources for home healthcare"
     }
   ]
@@ -113,9 +113,9 @@ export default function Header({ currentPage = 'home' }: HeaderProps): JSX.Eleme
                   <Heart className="h-6 w-6 text-white" aria-hidden="true" />
                 </div>
                 <div>
-                  <h1 className="text-xl font-semibold text-[#343A40] group-hover:text-[#4ECDC4] transition-colors">
+                  <div className="text-xl font-semibold text-[#343A40] group-hover:text-[#4ECDC4] transition-colors">
                     HomeHealHub
-                  </h1>
+                  </div>
                 </div>
               </Link>
             </div>

@@ -37,11 +37,11 @@ export const metadata: Metadata = {
     title: "Home Healthcare Topics & Guides | HomeHealHub Educational Resources",
     description: "Comprehensive guides covering essential home healthcare topics: in-home visits, equipment setup, family training, and progress monitoring.",
     type: "website",
-    url: "https://homehealhub.com/topics",
+    url: "https://homehealhub.org/topics",
     siteName: "HomeHealHub"
   },
   alternates: {
-    canonical: 'https://homehealhub.com/topics'
+    canonical: 'https://homehealhub.org/topics'
   },
   robots: {
     index: true,
@@ -149,7 +149,7 @@ export default function TopicsLandingPage(): JSX.Element {
     "@type": "WebPage",
     "name": "Home Healthcare Topics & Guides",
     "description": "Comprehensive educational resources covering essential home healthcare topics including in-home visits, equipment setup, family training, and progress monitoring.",
-    "url": "https://homehealhub.com/topics",
+    "url": "https://homehealhub.org/topics",
     "mainEntity": {
       "@type": "ItemList",
       "name": "Home Healthcare Topics",
@@ -162,7 +162,7 @@ export default function TopicsLandingPage(): JSX.Element {
           "@type": "Article",
           "name": topic.title,
           "description": topic.description,
-          "url": `https://homehealhub.com${topic.href}`,
+          "url": `https://homehealhub.org${topic.href}`,
           "about": {
             "@type": "Thing",
             "name": topic.title,
@@ -178,13 +178,13 @@ export default function TopicsLandingPage(): JSX.Element {
           "@type": "ListItem",
           "position": 1,
           "name": "Home",
-          "item": "https://homehealhub.com"
+          "item": "https://homehealhub.org"
         },
         {
           "@type": "ListItem",
           "position": 2,
           "name": "Topics",
-          "item": "https://homehealhub.com/topics"
+          "item": "https://homehealhub.org/topics"
         }
       ]
     },

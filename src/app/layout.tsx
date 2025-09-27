@@ -5,7 +5,7 @@ import "./globals.css";
 // Comprehensive SEO Metadata for the root layout
 export const metadata: Metadata = {
   title: {
-    default: "HomeHealHub | Your Gateway to Quality Home Healthcare Information",
+    default: "HomeHealHub | The Gateway to Home Health",
     template: "%s | HomeHealHub"
   },
   description: "HomeHealHub provides educational resources and information about in-home healthcare services, helping families understand their options and connect with quality care providers.",
@@ -29,13 +29,13 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://homehealhub.com",
+    url: "https://homehealhub.org",
     siteName: "HomeHealHub",
-    title: "HomeHealHub | Your Gateway to Quality Home Healthcare Information",
+    title: "HomeHealHub | The Gateway to Home Health",
     description: "Educational resources and information about in-home healthcare services, helping families understand their options and connect with quality care providers.",
     images: [
       {
-        url: "https://homehealhub.com/og-image.jpg",
+        url: "https://homehealhub.org/og-image.jpg",
         width: 1200,
         height: 630,
         alt: "HomeHealHub - Home Healthcare Education and Resources"
@@ -46,9 +46,9 @@ export const metadata: Metadata = {
   // Twitter Card tags
   twitter: {
     card: "summary_large_image",
-    title: "HomeHealHub | Your Gateway to Quality Home Healthcare Information",
+    title: "HomeHealHub | The Gateway to Home Health",
     description: "Educational resources and information about in-home healthcare services, helping families understand their options and connect with quality care providers.",
-    images: ["https://homehealhub.com/twitter-image.jpg"],
+    images: ["https://homehealhub.org/twitter-image.jpg"],
     creator: "@homehealhub"
   },
   
@@ -89,9 +89,9 @@ export const metadata: Metadata = {
   
   // Alternate languages (if multilingual support is added)
   alternates: {
-    canonical: "https://homehealhub.com",
+    canonical: "https://homehealhub.org",
     languages: {
-      "en-US": "https://homehealhub.com"
+      "en-US": "https://homehealhub.org"
     }
   },
   
@@ -120,10 +120,10 @@ export default function RootLayout({
               "@type": "Organization",
               "name": "HomeHealHub",
               "description": "Educational resources and information about in-home healthcare services, helping families understand their options and connect with quality care providers.",
-              "url": "https://homehealhub.com",
+              "url": "https://homehealhub.org",
               "logo": {
                 "@type": "ImageObject",
-                "url": "https://homehealhub.com/logo.png",
+                "url": "https://homehealhub.org/logo.png",
                 "width": 200,
                 "height": 60
               },
@@ -164,7 +164,7 @@ export default function RootLayout({
               "@type": "WebSite",
               "name": "HomeHealHub",
               "description": "Educational resources and information about in-home healthcare services",
-              "url": "https://homehealhub.com",
+              "url": "https://homehealhub.org",
               "inLanguage": "en-US",
               "copyrightYear": "2024",
               "copyrightHolder": {
@@ -184,7 +184,7 @@ export default function RootLayout({
                 "@type": "SearchAction",
                 "target": {
                   "@type": "EntryPoint",
-                  "urlTemplate": "https://homehealhub.com/search?q={search_term_string}"
+                  "urlTemplate": "https://homehealhub.org/search?q={search_term_string}"
                 },
                 "query-input": "required name=search_term_string"
               }

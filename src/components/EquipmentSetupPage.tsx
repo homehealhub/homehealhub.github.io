@@ -63,11 +63,11 @@ const equipmentSetupSchema = {
   "publisher": {
     "@type": "Organization",
     "name": "HomeHealHub",
-    "logo": "https://homehealhub.com/logo.png"
+    "logo": "https://homehealhub.org/logo.png"
   },
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://homehealhub.com/topics/equipment-setup"
+    "@id": "https://homehealhub.org/topics/equipment-setup"
   },
   "about": [
     "Medical equipment installation",

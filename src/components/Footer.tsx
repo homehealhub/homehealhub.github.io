@@ -9,16 +9,16 @@ const organizationStructuredData = {
   "@type": "Organization",
   "name": "HomeHealHub",
   "description": "Educational resources and information about in-home healthcare services",
-  "url": "https://homehealhub.com",
-  "logo": "https://homehealhub.com/images/logo.png",
+  "url": "https://homehealhub.org",
+  "logo": "https://homehealhub.org/images/logo.png",
   "contactPoint": {
     "@type": "ContactPoint",
     "email": "homehealhub@gmail.com",
     "contactType": "Customer Service"
   },
   "sameAs": [
-    "https://homehealhub.com/about",
-    "https://homehealhub.com/resources"
+    "https://homehealhub.org/about",
+    "https://homehealhub.org/resources"
   ]
 };
 

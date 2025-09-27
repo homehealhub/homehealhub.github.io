@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     title: "Progress Monitoring in Home Healthcare | Patient Tracking & Communication Guide",
     description: "Comprehensive guide to tracking patient progress, utilizing monitoring tools, and communicating with healthcare providers in home care settings.",
     type: "article",
-    url: "https://homehealhub.com/topics/progress-monitoring",
+    url: "https://homehealhub.org/topics/progress-monitoring",
     siteName: "HomeHealHub"
   },
   twitter: {
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     description: "Comprehensive guide to tracking patient progress, utilizing monitoring tools, and communicating with healthcare providers in home care settings."
   },
   alternates: {
-    canonical: "https://homehealhub.com/topics/progress-monitoring"
+    canonical: "https://homehealhub.org/topics/progress-monitoring"
   },
   robots: {
     index: true,
@@ -46,7 +46,7 @@ export default function ProgressMonitoringPageRoute(): JSX.Element {
     "@type": "Article",
     "headline": "Progress Monitoring in Home Healthcare",
     "description": "Comprehensive guide to tracking patient progress, utilizing monitoring tools, and communicating with healthcare providers in home care settings.",
-    "url": "https://homehealhub.com/topics/progress-monitoring",
+    "url": "https://homehealhub.org/topics/progress-monitoring",
     "author": {
       "@type": "Organization",
       "name": "HomeHealHub"
@@ -56,12 +56,12 @@ export default function ProgressMonitoringPageRoute(): JSX.Element {
       "name": "HomeHealHub",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://homehealhub.com/logo.png"
+        "url": "https://homehealhub.org/logo.png"
       }
     },
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": "https://homehealhub.com/topics/progress-monitoring"
+      "@id": "https://homehealhub.org/topics/progress-monitoring"
     },
     "about": [
       {
@@ -92,19 +92,19 @@ export default function ProgressMonitoringPageRoute(): JSX.Element {
           "@type": "ListItem",
           "position": 1,
           "name": "Home",
-          "item": "https://homehealhub.com"
+          "item": "https://homehealhub.org"
         },
         {
           "@type": "ListItem",
           "position": 2,
           "name": "Topics",
-          "item": "https://homehealhub.com/topics"
+          "item": "https://homehealhub.org/topics"
         },
         {
           "@type": "ListItem",
           "position": 3,
           "name": "Progress Monitoring",
-          "item": "https://homehealhub.com/topics/progress-monitoring"
+          "item": "https://homehealhub.org/topics/progress-monitoring"
         }
       ]
     },

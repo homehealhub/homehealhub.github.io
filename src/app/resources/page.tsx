@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     title: "Healthcare Resources & Provider Directory | HomeHealHub Partners",
     description: "Find trusted healthcare providers, medical equipment suppliers, and educational resources for home healthcare in our comprehensive directory.",
     type: "website",
-    url: "https://homehealhub.com/resources",
+    url: "https://homehealhub.org/resources",
     siteName: "HomeHealHub"
   },
   twitter: {
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     description: "Find trusted healthcare providers, medical equipment suppliers, and educational resources for home healthcare in our comprehensive directory."
   },
   alternates: {
-    canonical: "https://homehealhub.com/resources"
+    canonical: "https://homehealhub.org/resources"
   },
   robots: {
     index: true,
@@ -46,7 +46,7 @@ export default function Resources(): JSX.Element {
     "@type": "WebPage",
     "name": "Healthcare Resources & Provider Directory",
     "description": "Comprehensive directory of trusted healthcare providers, medical equipment suppliers, and educational resources for home healthcare needs.",
-    "url": "https://homehealhub.com/resources",
+    "url": "https://homehealhub.org/resources",
     "mainEntity": {
       "@type": "ItemList",
       "name": "Healthcare Resources Directory", 
@@ -111,13 +111,13 @@ export default function Resources(): JSX.Element {
           "@type": "ListItem",
           "position": 1,
           "name": "Home",
-          "item": "https://homehealhub.com"
+          "item": "https://homehealhub.org"
         },
         {
           "@type": "ListItem",
           "position": 2,
           "name": "Resources",
-          "item": "https://homehealhub.com/resources"
+          "item": "https://homehealhub.org/resources"
         }
       ]
     },
@@ -157,7 +157,7 @@ export default function Resources(): JSX.Element {
     "publisher": {
       "@type": "Organization",
       "name": "HomeHealHub",
-      "url": "https://homehealhub.com"
+      "url": "https://homehealhub.org"
     },
     "inLanguage": "en-US"
   };

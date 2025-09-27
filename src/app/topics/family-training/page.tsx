@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     title: "Family Caregiver Training & Education | Home Healthcare Skills Guide",
     description: "Comprehensive family caregiver training covering essential care techniques, communication strategies, and support resources for home healthcare.",
     type: "article",
-    url: "https://homehealhub.com/topics/family-training",
+    url: "https://homehealhub.org/topics/family-training",
     siteName: "HomeHealHub"
   },
   twitter: {
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     description: "Comprehensive family caregiver training covering essential care techniques, communication strategies, and support resources for home healthcare."
   },
   alternates: {
-    canonical: "https://homehealhub.com/topics/family-training"
+    canonical: "https://homehealhub.org/topics/family-training"
   },
   robots: {
     index: true,
@@ -46,7 +46,7 @@ export default function FamilyTrainingPageRoute(): JSX.Element {
     "@type": "Article",
     "headline": "Family Caregiver Training & Education for Home Healthcare",
     "description": "Comprehensive family caregiver training guide covering essential care techniques, communication strategies, documentation, and emotional support resources.",
-    "url": "https://homehealhub.com/topics/family-training",
+    "url": "https://homehealhub.org/topics/family-training",
     "author": {
       "@type": "Organization",
       "name": "HomeHealHub"
@@ -56,12 +56,12 @@ export default function FamilyTrainingPageRoute(): JSX.Element {
       "name": "HomeHealHub",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://homehealhub.com/logo.png"
+        "url": "https://homehealhub.org/logo.png"
       }
     },
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": "https://homehealhub.com/topics/family-training"
+      "@id": "https://homehealhub.org/topics/family-training"
     },
     "about": [
       {
@@ -92,19 +92,19 @@ export default function FamilyTrainingPageRoute(): JSX.Element {
           "@type": "ListItem",
           "position": 1,
           "name": "Home",
-          "item": "https://homehealhub.com"
+          "item": "https://homehealhub.org"
         },
         {
           "@type": "ListItem",
           "position": 2,
           "name": "Topics",
-          "item": "https://homehealhub.com/topics"
+          "item": "https://homehealhub.org/topics"
         },
         {
           "@type": "ListItem",
           "position": 3,
           "name": "Family Training",
-          "item": "https://homehealhub.com/topics/family-training"
+          "item": "https://homehealhub.org/topics/family-training"
         }
       ]
     },

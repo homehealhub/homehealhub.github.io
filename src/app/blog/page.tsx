@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     title: "Home Healthcare Blog | Expert Insights & Care Guides | HomeHealHub",
     description: "Explore comprehensive home healthcare articles featuring expert insights on equipment setup, family training, and patient care at home.",
     type: "website",
-    url: "https://homehealhub.com/blog",
+    url: "https://homehealhub.org/blog",
     siteName: "HomeHealHub"
   },
   twitter: {
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     description: "Explore comprehensive home healthcare articles featuring expert insights on equipment setup, family training, and patient care at home."
   },
   alternates: {
-    canonical: "https://homehealhub.com/blog"
+    canonical: "https://homehealhub.org/blog"
   },
   robots: {
     index: true,
@@ -46,15 +46,15 @@ export default function Blog(): JSX.Element {
     "@type": "Blog",
     "name": "HomeHealHub Blog",
     "description": "Expert insights and comprehensive guides on home healthcare, featuring articles on equipment setup, family training, progress monitoring, and in-home care services.",
-    "url": "https://homehealhub.com/blog",
+    "url": "https://homehealhub.org/blog",
     "inLanguage": "en-US",
     "publisher": {
       "@type": "Organization",
       "name": "HomeHealHub",
-      "url": "https://homehealhub.com",
+      "url": "https://homehealhub.org",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://homehealhub.com/logo.png"
+        "url": "https://homehealhub.org/logo.png"
       }
     },
     "mainEntity": {
@@ -92,13 +92,13 @@ export default function Blog(): JSX.Element {
           "@type": "ListItem",
           "position": 1,
           "name": "Home",
-          "item": "https://homehealhub.com"
+          "item": "https://homehealhub.org"
         },
         {
           "@type": "ListItem",
           "position": 2,
           "name": "Blog",
-          "item": "https://homehealhub.com/blog"
+          "item": "https://homehealhub.org/blog"
         }
       ]
     },

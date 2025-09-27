@@ -100,8 +100,8 @@ export default function HelloScreen(): JSX.Element {
     "@type": "Organization",
     "name": "HomeHealHub",
     "description": "Educational resources and information about in-home healthcare services, helping families understand their options and connect with quality care providers.",
-    "url": "https://homehealhub.com",
-    "logo": "https://homehealhub.com/images/logo.png",
+    "url": "https://homehealhub.org",
+    "logo": "https://homehealhub.org/images/logo.png",
     "sameAs": [
       "https://www.facebook.com/homehealhub",
       "https://www.twitter.com/homehealhub",
@@ -110,8 +110,8 @@ export default function HelloScreen(): JSX.Element {
     "contactPoint": {
       "@type": "ContactPoint",
       "contactType": "customer service",
-      "email": "info@homehealhub.com",
-      "availableLanguage": "English"
+      "email": "info@homehealhub.org",
+      "availableLanguage": "en"
     },
     "areaServed": "United States",
     "serviceType": "Healthcare Education"
@@ -122,11 +122,11 @@ export default function HelloScreen(): JSX.Element {
     "@context": "https://schema.org",
     "@type": "WebSite",
     "name": "HomeHealHub",
-    "url": "https://homehealhub.com",
+    "url": "https://homehealhub.org",
     "description": "Educational resources for in-home healthcare services",
     "potentialAction": {
       "@type": "SearchAction",
-      "target": "https://homehealhub.com/search?q={search_term_string}",
+      "target": "https://homehealhub.org/search?q={search_term_string}",
       "query-input": "required name=search_term_string"
     }
   };
@@ -140,7 +140,7 @@ export default function HelloScreen(): JSX.Element {
         "@type": "ListItem",
         "position": 1,
         "name": "Home",
-        "item": "https://homehealhub.com"
+        "item": "https://homehealhub.org"
       }
     ]
   };
@@ -175,11 +175,11 @@ export default function HelloScreen(): JSX.Element {
         {/* Additional meta tags */}
         <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
         <meta name="googlebot" content="index, follow" />
-        <link rel="canonical" href="https://homehealhub.com" />
+        <link rel="canonical" href="https://homehealhub.org" />
         
-        {/* Language and locale */}
-        <meta httpEquiv="content-language" content="en-US" />
-        <meta name="language" content="English" />
+        {/* Language and locale - FIXED */}
+        <meta httpEquiv="content-language" content="en" />
+        <meta name="language" content="en" />
         
         {/* Additional Open Graph tags */}
         <meta property="og:site_name" content="HomeHealHub" />
@@ -211,11 +211,10 @@ export default function HelloScreen(): JSX.Element {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-4xl mx-auto text-center">
               <h1 className="text-4xl md:text-5xl font-bold text-[#343A40] mb-6 leading-tight">
-                Empowering Families with Home Healthcare Knowledge
+                HomeHealHub: Empowering Families with Home Healthcare Knowledge and Resources
               </h1>
               <p className="text-xl text-[#6C757D] mb-8 leading-relaxed">
-                HomeHealHub provides educational resources and information about in-home healthcare services, 
-                helping families understand their options and connect with quality care providers.
+                HomeHealHub serves as your gateway to home health education, providing comprehensive resources and information about in-home healthcare services to help families understand their options and connect with quality care providers.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
                 <Button 
@@ -225,9 +224,9 @@ export default function HelloScreen(): JSX.Element {
                 >
                   <a 
                     href="/topics"
-                    aria-label="Explore healthcare topics and educational resources"
+                    aria-label="Browse healthcare topics and educational resources"
                   >
-                    Explore Topics
+                    Browse Healthcare Topics
                   </a>
                 </Button>
                 <Button 
@@ -238,9 +237,9 @@ export default function HelloScreen(): JSX.Element {
                 >
                   <a 
                     href="/resources"
-                    aria-label="Browse external healthcare resources and provider information"
+                    aria-label="Find external healthcare resources and provider information"
                   >
-                    Browse Resources
+                    Find Healthcare Resources
                   </a>
                 </Button>
               </div>
@@ -307,7 +306,7 @@ export default function HelloScreen(): JSX.Element {
                         href={topic.href}
                         aria-label={`Learn more about ${topic.title} in home healthcare`}
                       >
-                        Learn More
+                        Explore {topic.title}
                       </a>
                     </Button>
                   </CardContent>
@@ -383,7 +382,7 @@ export default function HelloScreen(): JSX.Element {
                             href={post.href}
                             aria-label={`Read full article: ${post.title}`}
                           >
-                            Read More →
+                            Read Article →
                           </a>
                         </Button>
                       </div>
@@ -404,7 +403,7 @@ export default function HelloScreen(): JSX.Element {
                   href="/blog"
                   aria-label="View all healthcare articles and blog posts"
                 >
-                  View All Articles
+                  Browse All Healthcare Articles
                 </a>
               </Button>
             </div>
@@ -456,7 +455,7 @@ export default function HelloScreen(): JSX.Element {
                       className="inline-flex items-center"
                       aria-label="Visit Luminous Rehab website (opens in new tab)"
                     >
-                      Learn More About Luminous Rehab
+                      Visit Luminous Rehab Services
                       <ExternalLink className="ml-2 h-4 w-4" aria-hidden="true" />
                     </a>
                   </Button>

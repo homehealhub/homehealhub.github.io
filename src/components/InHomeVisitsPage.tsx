@@ -42,10 +42,10 @@ export const metadata: Metadata = {
     title: "In-Home Healthcare Visits - Professional Medical Care at Home",
     description: "Comprehensive guide to in-home healthcare visits covering types of care, benefits, and preparation for successful home medical services.",
     type: "website",
-    url: "https://homehealhub.com/topics/in-home-visits",
+    url: "https://homehealhub.org/topics/in-home-visits",
     images: [
       {
-        url: "https://homehealhub.com/images/in-home-visits-og.jpg",
+        url: "https://homehealhub.org/images/in-home-visits-og.jpg",
         width: 1200,
         height: 630,
         alt: "Healthcare professional providing care during a home visit"
@@ -69,7 +69,7 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: "https://homehealhub.com/topics/in-home-visits"
+    canonical: "https://homehealhub.org/topics/in-home-visits"
   }
 };
 
@@ -79,7 +79,7 @@ const structuredData = {
   "@type": "WebPage",
   "name": "In-Home Healthcare Visits",
   "description": "Professional healthcare services delivered in the comfort and familiarity of your own home.",
-  "url": "https://homehealhub.com/topics/in-home-visits",
+  "url": "https://homehealhub.org/topics/in-home-visits",
   "mainEntity": {
     "@type": "MedicalWebPage",
     "name": "In-Home Healthcare Visits Guide",
@@ -102,19 +102,19 @@ const structuredData = {
         "@type": "ListItem",
         "position": 1,
         "name": "Home",
-        "item": "https://homehealhub.com"
+        "item": "https://homehealhub.org"
       },
       {
         "@type": "ListItem",
         "position": 2,
         "name": "Topics",
-        "item": "https://homehealhub.com/topics"
+        "item": "https://homehealhub.org/topics"
       },
       {
         "@type": "ListItem",
         "position": 3,
         "name": "In-Home Visits",
-        "item": "https://homehealhub.com/topics/in-home-visits"
+        "item": "https://homehealhub.org/topics/in-home-visits"
       }
     ]
   },

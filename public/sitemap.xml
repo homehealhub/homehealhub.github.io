@@ -8,7 +8,7 @@
 
     <!-- Homepage - Highest Priority -->
     <url>
-        <loc>https://homehealhub.com/</loc>
+        <loc>https://homehealhub.org/</loc>
         <lastmod>2025-09-18</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
@@ -16,7 +16,7 @@
 
     <!-- Topics Landing Page - High Priority -->
     <url>
-        <loc>https://homehealhub.com/topics</loc>
+        <loc>https://homehealhub.org/topics</loc>
         <lastmod>2025-09-18</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
@@ -24,28 +24,28 @@
 
     <!-- Individual Topic Pages - High Priority Educational Content -->
     <url>
-        <loc>https://homehealhub.com/topics/in-home-visits</loc>
+        <loc>https://homehealhub.org/topics/in-home-visits</loc>
         <lastmod>2025-09-18</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
 
     <url>
-        <loc>https://homehealhub.com/topics/equipment-setup</loc>
+        <loc>https://homehealhub.org/topics/equipment-setup</loc>
         <lastmod>2025-09-18</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
 
     <url>
-        <loc>https://homehealhub.com/topics/family-training</loc>
+        <loc>https://homehealhub.org/topics/family-training</loc>
         <lastmod>2025-09-18</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
 
     <url>
-        <loc>https://homehealhub.com/topics/progress-monitoring</loc>
+        <loc>https://homehealhub.org/topics/progress-monitoring</loc>
         <lastmod>2025-09-18</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
@@ -53,7 +53,7 @@
 
     <!-- Blog Section - High Priority for Fresh Content -->
     <url>
-        <loc>https://homehealhub.com/blog</loc>
+        <loc>https://homehealhub.org/blog</loc>
         <lastmod>2025-09-18</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.9</priority>
@@ -65,21 +65,21 @@
     <!-- Additional blog posts would be added here dynamically -->
     <!-- Example structure for future blog posts:
     <url>
-        <loc>https://homehealhub.com/blog/family-training-communication-skills</loc>
+        <loc>https://homehealhub.org/blog/family-training-communication-skills</loc>
         <lastmod>2025-09-17</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
 
     <url>
-        <loc>https://homehealhub.com/blog/monitoring-patient-progress-at-home</loc>
+        <loc>https://homehealhub.org/blog/monitoring-patient-progress-at-home</loc>
         <lastmod>2025-09-16</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
 
     <url>
-        <loc>https://homehealhub.com/blog/preparing-home-healthcare-visits</loc>
+        <loc>https://homehealhub.org/blog/preparing-home-healthcare-visits</loc>
         <lastmod>2025-09-15</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
@@ -88,7 +88,7 @@
 
     <!-- Resources Page - Important for External Links -->
     <url>
-        <loc>https://homehealhub.com/resources</loc>
+        <loc>https://homehealhub.org/resources</loc>
         <lastmod>2025-09-18</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
@@ -96,7 +96,7 @@
 
     <!-- About Page - Important for Trust and Authority -->
     <url>
-        <loc>https://homehealhub.com/about</loc>
+        <loc>https://homehealhub.org/about</loc>
         <lastmod>2025-09-18</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
@@ -105,7 +105,7 @@
     <!-- Legal/Policy Pages -->
 
     <url>
-        <loc>https://homehealhub.com/sitemap</loc>
+        <loc>https://homehealhub.org/sitemap</loc>
         <lastmod>2025-09-18</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.4</priority>

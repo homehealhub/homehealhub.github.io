@@ -4,8 +4,8 @@ import { JSX } from "react";
 
 // SEO Metadata for the home page
 export const metadata: Metadata = {
-  title: "HomeHealHub | Your Gateway to Quality Home Healthcare Information",
-  description: "HomeHealHub provides educational resources and information about in-home healthcare services, helping families understand their options and connect with quality care providers. Explore guides on equipment setup, family training, and progress monitoring.",
+  title: "HomeHealHub | The Gateway to Home Health",
+  description: "HomeHealHub provides educational resources and information about in-home healthcare services. Explore our Guides!",
   keywords: [
     "home healthcare",
     "in-home care services",
@@ -19,14 +19,14 @@ export const metadata: Metadata = {
     "quality home care"
   ],
   openGraph: {
-    title: "HomeHealHub | Your Gateway to Quality Home Healthcare Information",
+    title: "HomeHealHub | The Gateway to Home Health",
     description: "Educational resources and information about in-home healthcare services, helping families understand their options and connect with quality care providers.",
     type: "website",
-    url: "https://homehealhub.com",
+    url: "https://homehealhub.org",
     siteName: "HomeHealHub",
     images: [
       {
-        url: "https://homehealhub.com/og-home.jpg",
+        url: "https://homehealhub.org/og-home.jpg",
         width: 1200,
         height: 630,
         alt: "HomeHealHub - Your Gateway to Quality Home Healthcare Information"
@@ -35,12 +35,12 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "HomeHealHub | Your Gateway to Quality Home Healthcare Information",
+    title: "HomeHealHub | The Gateway to Home Health",
     description: "Educational resources and information about in-home healthcare services, helping families understand their options and connect with quality care providers.",
-    images: ["https://homehealhub.com/twitter-home.jpg"]
+    images: ["https://homehealhub.org/twitter-home.jpg"]
   },
   alternates: {
-    canonical: "https://homehealhub.com"
+    canonical: "https://homehealhub.org"
   },
   robots: {
     index: true,
@@ -60,12 +60,12 @@ export default function Home(): JSX.Element {
     "@type": "WebPage",
     "name": "HomeHealHub - Your Gateway to Quality Home Healthcare Information",
     "description": "Educational resources and information about in-home healthcare services, helping families understand their options and connect with quality care providers.",
-    "url": "https://homehealhub.com",
+    "url": "https://homehealhub.org",
     "mainEntity": {
       "@type": "Organization",
       "name": "HomeHealHub",
       "description": "Educational platform providing comprehensive resources for home healthcare",
-      "url": "https://homehealhub.com",
+      "url": "https://homehealhub.org",
       "foundingDate": "2024",
       "knowsAbout": [
         "Home Healthcare Services",
@@ -92,7 +92,7 @@ export default function Home(): JSX.Element {
           "@type": "ListItem",
           "position": 1,
           "name": "Home",
-          "item": "https://homehealhub.com"
+          "item": "https://homehealhub.org"
         }
       ]
     },

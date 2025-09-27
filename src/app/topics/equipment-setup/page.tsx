@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     title: "Medical Equipment Setup for Home Healthcare | Installation & Safety Guide",
     description: "Comprehensive guide to medical equipment setup, installation, safety protocols, and maintenance for home healthcare environments.",
     type: "article",
-    url: "https://homehealhub.com/topics/equipment-setup",
+    url: "https://homehealhub.org/topics/equipment-setup",
     siteName: "HomeHealHub"
   },
   twitter: {
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     description: "Comprehensive guide to medical equipment setup, installation, safety protocols, and maintenance for home healthcare environments."
   },
   alternates: {
-    canonical: "https://homehealhub.com/topics/equipment-setup"
+    canonical: "https://homehealhub.org/topics/equipment-setup"
   },
   robots: {
     index: true,
@@ -46,7 +46,7 @@ export default function EquipmentSetupPageRoute(): JSX.Element {
     "@type": "Article",
     "headline": "Medical Equipment Setup for Home Healthcare",
     "description": "Comprehensive guide to medical equipment setup, installation, safety protocols, and maintenance for home healthcare environments.",
-    "url": "https://homehealhub.com/topics/equipment-setup",
+    "url": "https://homehealhub.org/topics/equipment-setup",
     "author": {
       "@type": "Organization",
       "name": "HomeHealHub"
@@ -56,12 +56,12 @@ export default function EquipmentSetupPageRoute(): JSX.Element {
       "name": "HomeHealHub",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://homehealhub.com/logo.png"
+        "url": "https://homehealhub.org/logo.png"
       }
     },
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": "https://homehealhub.com/topics/equipment-setup"
+      "@id": "https://homehealhub.org/topics/equipment-setup"
     },
     "about": [
       {
@@ -92,19 +92,19 @@ export default function EquipmentSetupPageRoute(): JSX.Element {
           "@type": "ListItem",
           "position": 1,
           "name": "Home",
-          "item": "https://homehealhub.com"
+          "item": "https://homehealhub.org"
         },
         {
           "@type": "ListItem",
           "position": 2,
           "name": "Topics",
-          "item": "https://homehealhub.com/topics"
+          "item": "https://homehealhub.org/topics"
         },
         {
           "@type": "ListItem",
           "position": 3,
           "name": "Equipment Setup",
-          "item": "https://homehealhub.com/topics/equipment-setup"
+          "item": "https://homehealhub.org/topics/equipment-setup"
         }
       ]
     },

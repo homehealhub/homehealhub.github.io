@@ -22,7 +22,7 @@ export default function PageTemplate({
 }: PageTemplateProps): JSX.Element {
   
   // Generate structured data for current page
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://homehealhub.com';
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://homehealhub.org';
   
   // Default organization structured data
   const organizationSchema = {
@@ -34,7 +34,7 @@ export default function PageTemplate({
     "contactPoint": {
       "@type": "ContactPoint",
       "contactType": "customer service",
-      "email": "contact@homehealhub.com"
+      "email": "contact@homehealhub.org"
     }
   };
 

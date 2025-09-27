@@ -46,8 +46,8 @@ const organizationSchema = {
   "@type": "Organization",
   "name": "HomeHealHub",
   "description": "Educational resources and information about in-home healthcare services, helping families understand their options and connect with quality care providers.",
-  "url": "https://homehealhub.com",
-  "logo": "https://homehealhub.com/logo.png",
+  "url": "https://homehealhub.org",
+  "logo": "https://homehealhub.org/logo.png",
   "foundingDate": "2024",
   "sameAs": [],
   "contactPoint": {

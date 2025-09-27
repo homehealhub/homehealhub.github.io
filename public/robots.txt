@@ -50,7 +50,7 @@ User-agent: HealthlineBot
 Allow: /
 
 # Sitemap location
-Sitemap: https://homehealhub.com/sitemap.xml
+Sitemap: https://homehealhub.org/sitemap.xml
 
 # Additional instructions for better crawling
 # Crawl-delay for general bots to ensure site performance
