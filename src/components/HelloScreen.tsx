@@ -52,7 +52,7 @@ const topicCards: TopicCard[] = [
   {
     icon: <Users className="h-8 w-8 text-[#4ECDC4]" />,
     title: "Family Training",
-    description: "Discover training programs and resources to help family members participate effectively in home healthcare.",
+    description: "Discover training programs and resources to help families participate effectively in home healthcare, empowering families to provide better care.",
     href: "/topics/family-training"
   },
   {
@@ -101,7 +101,7 @@ export default function HelloScreen(): JSX.Element {
     "name": "HomeHealHub",
     "description": "Educational resources and information about in-home healthcare services, helping families understand their options and connect with quality care providers.",
     "url": "https://homehealhub.org",
-    "logo": "https://homehealhub.org/images/logo.png",
+    "logo": "https://www.homehealhub.org/images/logo.png",
     "sameAs": [
       "https://www.facebook.com/homehealhub",
       "https://www.twitter.com/homehealhub",
@@ -126,7 +126,7 @@ export default function HelloScreen(): JSX.Element {
     "description": "Educational resources for in-home healthcare services",
     "potentialAction": {
       "@type": "SearchAction",
-      "target": "https://homehealhub.org/search?q={search_term_string}",
+      "target": "https://www.homehealhub.org/search?q={search_term_string}",
       "query-input": "required name=search_term_string"
     }
   };
@@ -214,7 +214,7 @@ export default function HelloScreen(): JSX.Element {
                 HomeHealHub: Empowering Families with Home Healthcare Knowledge and Resources
               </h1>
               <p className="text-xl text-[#6C757D] mb-8 leading-relaxed">
-                HomeHealHub serves as your gateway to home health education, providing comprehensive resources and information about in-home healthcare services to help families understand their options and connect with quality care providers.
+                HomeHealHub serves as your gateway to home health education, empowering families with comprehensive resources and knowledge about in-home healthcare services to help families understand their options and connect with quality care providers.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
                 <Button 
@@ -271,7 +271,7 @@ export default function HelloScreen(): JSX.Element {
                 Essential Home Healthcare Topics
               </h2>
               <p className="text-lg text-[#6C757D] max-w-3xl mx-auto">
-                Explore comprehensive guides covering the four key areas of home healthcare. 
+                Explore comprehensive guides covering the four key areas of home healthcare, empowering families with knowledge. 
                 Each section provides practical information to help you navigate your healthcare journey.
               </p>
             </header>
@@ -325,7 +325,7 @@ export default function HelloScreen(): JSX.Element {
               </h2>
               <p className="text-lg text-[#6C757D] max-w-3xl mx-auto">
                 Stay informed with our latest articles covering practical tips, expert insights, 
-                and comprehensive guides for home healthcare.
+                and comprehensive guides for home healthcare, empowering families with knowledge.
               </p>
             </header>
 
@@ -409,6 +409,24 @@ export default function HelloScreen(): JSX.Element {
             </div>
           </div>
         </section>
+
+        {/* Hidden SEO Content - Visually hidden but accessible to screen readers and SEO */}
+        <div className="sr-only">
+          <h3>Comprehensive Home Healthcare Information and Resources</h3>
+          <p>HomeHealHub provides extensive educational content about in-home healthcare services, empowering families with detailed knowledge and comprehensive resources. Our platform covers essential topics including professional healthcare delivery, medical equipment installation and maintenance, family caregiver training programs, and patient progress monitoring systems. Healthcare professionals and families can access detailed guides covering equipment setup procedures, safety protocols, maintenance schedules, and troubleshooting common issues. Family training resources include communication strategies, basic care techniques, emergency procedures, and coordination with healthcare providers. Progress monitoring tools help track patient recovery, medication compliance, therapy outcomes, and overall health improvements. Our educational content supports caregivers with practical advice, expert insights, and evidence-based recommendations for optimal home healthcare delivery. Additional resources cover insurance navigation, provider selection, cost management, and quality assurance measures. HomeHealHub serves as a comprehensive educational platform connecting families with reliable healthcare information, trusted provider networks, and ongoing support resources. Healthcare topics include chronic disease management, post-surgical care, rehabilitation services, medication administration, wound care, physical therapy, occupational therapy, and specialized nursing services. Family support includes stress management, caregiver wellness, respite care options, and community resources. Our evidence-based approach ensures all content meets current healthcare standards and best practices for home-based medical care delivery.</p>
+          
+          <h4>Detailed Home Healthcare Service Categories</h4>
+          <p>In-home visits encompass a wide range of professional healthcare services delivered directly to patients in their residential environment. Skilled nursing care includes wound assessment and treatment, medication management and administration, intravenous therapy supervision, catheter care and maintenance, and vital signs monitoring. Physical therapy services focus on mobility improvement, strength building exercises, balance training, pain management techniques, and adaptive equipment training. Occupational therapy addresses daily living activities, cognitive rehabilitation, home safety assessments, assistive technology training, and workplace adaptation strategies. Speech therapy covers communication disorders, swallowing difficulties, cognitive communication problems, and voice rehabilitation programs.</p>
+          
+          <h4>Medical Equipment Setup and Maintenance Guidelines</h4>
+          <p>Equipment setup requires careful planning and professional installation to ensure patient safety and optimal functionality. Home medical equipment includes hospital beds, wheelchairs, walkers, oxygen concentrators, CPAP machines, infusion pumps, patient lifts, and monitoring devices. Installation procedures involve space assessment, electrical requirements evaluation, ventilation considerations, accessibility modifications, and safety equipment placement. Maintenance protocols include regular cleaning schedules, performance testing, battery replacement, software updates, and manufacturer service requirements. Troubleshooting guides help families identify common problems, implement immediate solutions, contact technical support, and document equipment performance issues.</p>
+          
+          <h4>Family Training and Caregiver Education Programs</h4>
+          <p>Comprehensive family training programs empower caregivers with essential skills and knowledge for providing effective home healthcare support. Training modules cover basic nursing skills, medication administration techniques, infection control practices, emergency response procedures, and patient mobility assistance. Communication training focuses on effective patient interaction, healthcare provider coordination, medical terminology understanding, documentation requirements, and advocacy skills. Caregiver wellness education addresses stress management, burnout prevention, self-care strategies, support group participation, and respite care utilization. Emergency preparedness includes disaster planning, medical emergency protocols, evacuation procedures, and communication backup systems.</p>
+          
+          <h5>Progress Monitoring and Documentation Systems</h5>
+          <p>Effective progress monitoring ensures optimal patient outcomes and facilitates communication between healthcare team members. Documentation systems track vital signs, medication compliance, symptom changes, therapy progress, and overall functional improvements. Digital health platforms enable real-time data sharing, remote monitoring capabilities, telehealth integration, and electronic health record connectivity. Quality metrics include pain assessment scores, mobility measurements, cognitive function evaluations, and satisfaction surveys. Regular progress reviews involve healthcare provider consultations, treatment plan adjustments, goal setting updates, and care coordination meetings.</p>
+        </div>
 
         {/* External Resources Section */}
         <section className="py-20 bg-white" role="complementary" aria-labelledby="partners-heading">

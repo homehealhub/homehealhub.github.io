@@ -49,15 +49,15 @@ const blogSchema = {
   "@type": "Blog",
   "name": "HomeHealHub Blog",
   "description": "Expert-reviewed articles about in-home healthcare, medical equipment, family training, and patient monitoring.",
-  "url": "https://homehealhub.org/blog",
+  "url": "https://www.homehealhub.org/blog",
   "publisher": {
     "@type": "Organization",
     "name": "HomeHealHub",
-    "logo": "https://homehealhub.org/logo.png"
+    "logo": "https://www.homehealhub.org/logo.png"
   },
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://homehealhub.org/blog"
+    "@id": "https://www.homehealhub.org/blog"
   },
   "about": [
     "In-home healthcare",
@@ -216,11 +216,11 @@ function ExpandedBlog({ blog, onClose, isLoading }: ExpandedBlogProps) {
     "publisher": {
       "@type": "Organization",
       "name": "HomeHealHub",
-      "logo": "https://homehealhub.org/logo.png"
+      "logo": "https://www.homehealhub.org/logo.png"
     },
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": `https://homehealhub.org/blog/${blog.id}`
+      "@id": `https://www.homehealhub.org/blog/${blog.id}`
     },
     "keywords": blog.tags.join(", "),
     "about": blog.category

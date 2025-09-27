@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     title: "Home Healthcare Topics & Educational Guides | HomeHealHub Learning Center",
     description: "Comprehensive guides covering essential home healthcare topics: in-home visits, equipment setup, family training, and progress monitoring for families.",
     type: "website",
-    url: "https://homehealhub.org/topics",
+    url: "https://www.homehealhub.org/topics",
     siteName: "HomeHealHub"
   },
   twitter: {
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     description: "Comprehensive guides covering essential home healthcare topics: in-home visits, equipment setup, family training, and progress monitoring for families."
   },
   alternates: {
-    canonical: "https://homehealhub.org/topics"
+    canonical: "https://www.homehealhub.org/topics"
   },
   robots: {
     index: true,
@@ -46,7 +46,7 @@ export default function TopicsPage(): JSX.Element {
     "@type": "LearningResource",
     "name": "Home Healthcare Topics & Educational Guides",
     "description": "Comprehensive educational resources covering essential home healthcare topics including in-home visits, equipment setup, family training, and progress monitoring.",
-    "url": "https://homehealhub.org/topics",
+    "url": "https://www.homehealhub.org/topics",
     "educationalLevel": "General public",
     "learningResourceType": "Educational Guide Collection",
     "teaches": [
@@ -65,7 +65,7 @@ export default function TopicsPage(): JSX.Element {
       "name": "HomeHealHub",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://homehealhub.org/logo.png"
+        "url": "https://www.homehealhub.org/logo.png"
       }
     },
     "mainEntity": {
@@ -81,7 +81,7 @@ export default function TopicsPage(): JSX.Element {
             "@type": "Article",
             "name": "In-Home Visits",
             "description": "Comprehensive guide to professional healthcare services delivered in your home environment",
-            "url": "https://homehealhub.org/topics/in-home-visits",
+            "url": "https://www.homehealhub.org/topics/in-home-visits",
             "about": {
               "@type": "Thing",
               "name": "In-Home Healthcare Services"
@@ -95,7 +95,7 @@ export default function TopicsPage(): JSX.Element {
             "@type": "Article",
             "name": "Equipment Setup",
             "description": "Essential information about medical equipment installation, safety requirements, and maintenance",
-            "url": "https://homehealhub.org/topics/equipment-setup",
+            "url": "https://www.homehealhub.org/topics/equipment-setup",
             "about": {
               "@type": "Thing",
               "name": "Medical Equipment Setup"
@@ -109,7 +109,7 @@ export default function TopicsPage(): JSX.Element {
             "@type": "Article",
             "name": "Family Training",
             "description": "Training programs and resources to help family members participate effectively in home healthcare",
-            "url": "https://homehealhub.org/topics/family-training",
+            "url": "https://www.homehealhub.org/topics/family-training",
             "about": {
               "@type": "Thing",
               "name": "Family Caregiver Training"
@@ -123,7 +123,7 @@ export default function TopicsPage(): JSX.Element {
             "@type": "Article",
             "name": "Progress Monitoring",
             "description": "Tools and techniques for tracking patient progress and effective communication with providers",
-            "url": "https://homehealhub.org/topics/progress-monitoring",
+            "url": "https://www.homehealhub.org/topics/progress-monitoring",
             "about": {
               "@type": "Thing",
               "name": "Patient Progress Monitoring"
@@ -145,7 +145,7 @@ export default function TopicsPage(): JSX.Element {
           "@type": "ListItem",
           "position": 2,
           "name": "Topics",
-          "item": "https://homehealhub.org/topics"
+          "item": "https://www.homehealhub.org/topics"
         }
       ]
     },

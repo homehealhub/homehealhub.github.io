@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     siteName: "HomeHealHub",
     images: [
       {
-        url: "https://homehealhub.org/og-home.jpg",
+        url: "https://www.homehealhub.org/og-home.jpg",
         width: 1200,
         height: 630,
         alt: "HomeHealHub - Your Gateway to Quality Home Healthcare Information"
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "HomeHealHub | The Gateway to Home Health",
     description: "Educational resources and information about in-home healthcare services, helping families understand their options and connect with quality care providers.",
-    images: ["https://homehealhub.org/twitter-home.jpg"]
+    images: ["https://www.homehealhub.org/twitter-home.jpg"]
   },
   alternates: {
     canonical: "https://homehealhub.org"

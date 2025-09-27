@@ -48,11 +48,11 @@ export const metadata: Metadata = {
     title: "Progress Monitoring in Home Healthcare | HomeHealHub",
     description: "Comprehensive guide to tracking patient progress, utilizing monitoring tools, and communicating with healthcare providers in home care settings.",
     type: "article",
-    url: "https://homehealhub.org/topics/progress-monitoring",
+    url: "https://www.homehealhub.org/topics/progress-monitoring",
     siteName: "HomeHealHub"
   },
   alternates: {
-    canonical: 'https://homehealhub.org/topics/progress-monitoring'
+    canonical: 'https://www.homehealhub.org/topics/progress-monitoring'
   },
   robots: {
     index: true,
@@ -298,12 +298,12 @@ export default function ProgressMonitoringPage(): JSX.Element {
       "name": "HomeHealHub",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://homehealhub.org/logo.png"
+        "url": "https://www.homehealhub.org/logo.png"
       }
     },
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": "https://homehealhub.org/topics/progress-monitoring"
+      "@id": "https://www.homehealhub.org/topics/progress-monitoring"
     },
     "about": [
       {

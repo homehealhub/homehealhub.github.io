@@ -45,11 +45,11 @@ export const metadata: Metadata = {
     title: "Healthcare Resources & Partners | HomeHealHub Directory",
     description: "Comprehensive directory of trusted healthcare providers, equipment suppliers, and educational resources for home healthcare needs.",
     type: "website",
-    url: "https://homehealhub.org/resources",
+    url: "https://www.homehealhub.org/resources",
     siteName: "HomeHealHub"
   },
   alternates: {
-    canonical: 'https://homehealhub.org/resources'
+    canonical: 'https://www.homehealhub.org/resources'
   },
   robots: {
     index: true,
@@ -288,7 +288,7 @@ const ResourcesPage = () => {
     "@type": "WebPage",
     "name": "Healthcare Resources & Partners Directory",
     "description": "Comprehensive directory of trusted healthcare providers, equipment suppliers, and educational resources for home healthcare needs.",
-    "url": "https://homehealhub.org/resources",
+    "url": "https://www.homehealhub.org/resources",
     "mainEntity": {
       "@type": "ItemList",
       "name": "Healthcare Resources Directory",
@@ -327,7 +327,7 @@ const ResourcesPage = () => {
           "@type": "ListItem",
           "position": 2,
           "name": "Resources",
-          "item": "https://homehealhub.org/resources"
+          "item": "https://www.homehealhub.org/resources"
         }
       ]
     },

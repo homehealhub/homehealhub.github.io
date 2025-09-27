@@ -44,10 +44,10 @@ export const metadata: Metadata = {
     title: "Family Training Programs for Home Healthcare",
     description: "Comprehensive training programs that empower family caregivers with essential skills for safe, effective home healthcare.",
     type: "website",
-    url: "https://homehealhub.org/topics/family-training",
+    url: "https://www.homehealhub.org/topics/family-training",
     images: [
       {
-        url: "https://homehealhub.org/images/family-training-og.jpg",
+        url: "https://www.homehealhub.org/images/family-training-og.jpg",
         width: 1200,
         height: 630,
         alt: "Family members learning home healthcare techniques"
@@ -71,7 +71,7 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: "https://homehealhub.org/topics/family-training"
+    canonical: "https://www.homehealhub.org/topics/family-training"
   }
 };
 
@@ -81,7 +81,7 @@ const structuredData = {
   "@type": "WebPage",
   "name": "Family Training Programs for Home Healthcare",
   "description": "Comprehensive family training programs that teach essential skills for effective home healthcare participation.",
-  "url": "https://homehealhub.org/topics/family-training",
+  "url": "https://www.homehealhub.org/topics/family-training",
   "mainEntity": {
     "@type": "EducationalOrganization",
     "name": "HomeHealHub",
@@ -101,13 +101,13 @@ const structuredData = {
         "@type": "ListItem",
         "position": 2,
         "name": "Topics",
-        "item": "https://homehealhub.org/topics"
+        "item": "https://www.homehealhub.org/topics"
       },
       {
         "@type": "ListItem",
         "position": 3,
         "name": "Family Training",
-        "item": "https://homehealhub.org/topics/family-training"
+        "item": "https://www.homehealhub.org/topics/family-training"
       }
     ]
   },

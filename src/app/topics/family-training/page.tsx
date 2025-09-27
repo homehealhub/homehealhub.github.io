@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     title: "Family Caregiver Training & Education | Home Healthcare Skills Guide",
     description: "Comprehensive family caregiver training covering essential care techniques, communication strategies, and support resources for home healthcare.",
     type: "article",
-    url: "https://homehealhub.org/topics/family-training",
+    url: "https://www.homehealhub.org/topics/family-training",
     siteName: "HomeHealHub"
   },
   twitter: {
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     description: "Comprehensive family caregiver training covering essential care techniques, communication strategies, and support resources for home healthcare."
   },
   alternates: {
-    canonical: "https://homehealhub.org/topics/family-training"
+    canonical: "https://www.homehealhub.org/topics/family-training"
   },
   robots: {
     index: true,
@@ -46,7 +46,7 @@ export default function FamilyTrainingPageRoute(): JSX.Element {
     "@type": "Article",
     "headline": "Family Caregiver Training & Education for Home Healthcare",
     "description": "Comprehensive family caregiver training guide covering essential care techniques, communication strategies, documentation, and emotional support resources.",
-    "url": "https://homehealhub.org/topics/family-training",
+    "url": "https://www.homehealhub.org/topics/family-training",
     "author": {
       "@type": "Organization",
       "name": "HomeHealHub"
@@ -56,12 +56,12 @@ export default function FamilyTrainingPageRoute(): JSX.Element {
       "name": "HomeHealHub",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://homehealhub.org/logo.png"
+        "url": "https://www.homehealhub.org/logo.png"
       }
     },
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": "https://homehealhub.org/topics/family-training"
+      "@id": "https://www.homehealhub.org/topics/family-training"
     },
     "about": [
       {
@@ -98,13 +98,13 @@ export default function FamilyTrainingPageRoute(): JSX.Element {
           "@type": "ListItem",
           "position": 2,
           "name": "Topics",
-          "item": "https://homehealhub.org/topics"
+          "item": "https://www.homehealhub.org/topics"
         },
         {
           "@type": "ListItem",
           "position": 3,
           "name": "Family Training",
-          "item": "https://homehealhub.org/topics/family-training"
+          "item": "https://www.homehealhub.org/topics/family-training"
         }
       ]
     },

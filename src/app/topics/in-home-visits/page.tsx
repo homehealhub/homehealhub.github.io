@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     title: "In-Home Healthcare Visits | Professional Home Care Services Guide",
     description: "Comprehensive guide to in-home healthcare visits, types of care provided, and how to prepare for professional healthcare services at home.",
     type: "article",
-    url: "https://homehealhub.org/topics/in-home-visits",
+    url: "https://www.homehealhub.org/topics/in-home-visits",
     siteName: "HomeHealHub"
   },
   twitter: {
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     description: "Comprehensive guide to in-home healthcare visits, types of care provided, and how to prepare for professional healthcare services at home."
   },
   alternates: {
-    canonical: "https://homehealhub.org/topics/in-home-visits"
+    canonical: "https://www.homehealhub.org/topics/in-home-visits"
   },
   robots: {
     index: true,
@@ -46,7 +46,7 @@ export default function InHomeVisitsPageRoute(): JSX.Element {
     "@type": "Article",
     "headline": "In-Home Healthcare Visits and Professional Home Care Services",
     "description": "Comprehensive guide to in-home healthcare visits including types of care, preparing your home, working with healthcare professionals, and benefits of home-based medical services.",
-    "url": "https://homehealhub.org/topics/in-home-visits",
+    "url": "https://www.homehealhub.org/topics/in-home-visits",
     "author": {
       "@type": "Organization",
       "name": "HomeHealHub"
@@ -56,12 +56,12 @@ export default function InHomeVisitsPageRoute(): JSX.Element {
       "name": "HomeHealHub",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://homehealhub.org/logo.png"
+        "url": "https://www.homehealhub.org/logo.png"
       }
     },
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": "https://homehealhub.org/topics/in-home-visits"
+      "@id": "https://www.homehealhub.org/topics/in-home-visits"
     },
     "about": [
       {
@@ -98,13 +98,13 @@ export default function InHomeVisitsPageRoute(): JSX.Element {
           "@type": "ListItem",
           "position": 2,
           "name": "Topics",
-          "item": "https://homehealhub.org/topics"
+          "item": "https://www.homehealhub.org/topics"
         },
         {
           "@type": "ListItem",
           "position": 3,
           "name": "In-Home Visits",
-          "item": "https://homehealhub.org/topics/in-home-visits"
+          "item": "https://www.homehealhub.org/topics/in-home-visits"
         }
       ]
     },

@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     description: "Educational resources and information about in-home healthcare services, helping families understand their options and connect with quality care providers.",
     images: [
       {
-        url: "https://homehealhub.org/og-image.jpg",
+        url: "https://www.homehealhub.org/og-image.jpg",
         width: 1200,
         height: 630,
         alt: "HomeHealHub - Home Healthcare Education and Resources"
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "HomeHealHub | The Gateway to Home Health",
     description: "Educational resources and information about in-home healthcare services, helping families understand their options and connect with quality care providers.",
-    images: ["https://homehealhub.org/twitter-image.jpg"],
+    images: ["https://www.homehealhub.org/twitter-image.jpg"],
     creator: "@homehealhub"
   },
   
@@ -123,7 +123,7 @@ export default function RootLayout({
               "url": "https://homehealhub.org",
               "logo": {
                 "@type": "ImageObject",
-                "url": "https://homehealhub.org/logo.png",
+                "url": "https://www.homehealhub.org/logo.png",
                 "width": 200,
                 "height": 60
               },
@@ -184,7 +184,7 @@ export default function RootLayout({
                 "@type": "SearchAction",
                 "target": {
                   "@type": "EntryPoint",
-                  "urlTemplate": "https://homehealhub.org/search?q={search_term_string}"
+                  "urlTemplate": "https://www.homehealhub.org/search?q={search_term_string}"
                 },
                 "query-input": "required name=search_term_string"
               }

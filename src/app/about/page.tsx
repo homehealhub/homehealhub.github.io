@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     title: "About HomeHealHub | Our Mission & Healthcare Education Standards",
     description: "Learn about HomeHealHub's mission to provide evidence-based home healthcare education and our commitment to helping families navigate home care options.",
     type: "website",
-    url: "https://homehealhub.org/about",
+    url: "https://www.homehealhub.org/about",
     siteName: "HomeHealHub"
   },
   twitter: {
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     description: "Learn about HomeHealHub's mission to provide evidence-based home healthcare education and our commitment to helping families navigate home care options."
   },
   alternates: {
-    canonical: "https://homehealhub.org/about"
+    canonical: "https://www.homehealhub.org/about"
   },
   robots: {
     index: true,
@@ -46,7 +46,7 @@ export default function About(): JSX.Element {
     "@type": "AboutPage",
     "name": "About HomeHealHub",
     "description": "Learn about HomeHealHub's mission to provide evidence-based home healthcare education and our commitment to helping families navigate home care options safely.",
-    "url": "https://homehealhub.org/about",
+    "url": "https://www.homehealhub.org/about",
     "mainEntity": {
       "@type": "Organization",
       "name": "HomeHealHub",
@@ -90,7 +90,7 @@ export default function About(): JSX.Element {
           "@type": "ListItem",
           "position": 2,
           "name": "About",
-          "item": "https://homehealhub.org/about"
+          "item": "https://www.homehealhub.org/about"
         }
       ]
     },

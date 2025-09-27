@@ -20,25 +20,25 @@ const navigationStructuredData = {
     {
       "@type": "WebPage",
       "name": "Home Healthcare Topics",
-      "url": "https://homehealhub.org/topics",
+      "url": "https://www.homehealhub.org/topics",
       "description": "Educational guides on in-home visits, equipment setup, family training, and progress monitoring"
     },
     {
       "@type": "WebPage", 
       "name": "Healthcare Blog",
-      "url": "https://homehealhub.org/blog",
+      "url": "https://www.homehealhub.org/blog",
       "description": "Latest articles and insights on home healthcare practices and family caregiving"
     },
     {
       "@type": "WebPage",
       "name": "Healthcare Resources",
-      "url": "https://homehealhub.org/resources", 
+      "url": "https://www.homehealhub.org/resources", 
       "description": "Directory of trusted home healthcare providers and support organizations"
     },
     {
       "@type": "WebPage",
       "name": "About HomeHealHub",
-      "url": "https://homehealhub.org/about",
+      "url": "https://www.homehealhub.org/about",
       "description": "Learn about our mission to provide educational resources for home healthcare"
     }
   ]

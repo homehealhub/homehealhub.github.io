@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     title: "Home Healthcare Blog | Expert Insights & Care Guides | HomeHealHub",
     description: "Explore comprehensive home healthcare articles featuring expert insights on equipment setup, family training, and patient care at home.",
     type: "website",
-    url: "https://homehealhub.org/blog",
+    url: "https://www.homehealhub.org/blog",
     siteName: "HomeHealHub"
   },
   twitter: {
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     description: "Explore comprehensive home healthcare articles featuring expert insights on equipment setup, family training, and patient care at home."
   },
   alternates: {
-    canonical: "https://homehealhub.org/blog"
+    canonical: "https://www.homehealhub.org/blog"
   },
   robots: {
     index: true,
@@ -46,7 +46,7 @@ export default function Blog(): JSX.Element {
     "@type": "Blog",
     "name": "HomeHealHub Blog",
     "description": "Expert insights and comprehensive guides on home healthcare, featuring articles on equipment setup, family training, progress monitoring, and in-home care services.",
-    "url": "https://homehealhub.org/blog",
+    "url": "https://www.homehealhub.org/blog",
     "inLanguage": "en-US",
     "publisher": {
       "@type": "Organization",
@@ -54,7 +54,7 @@ export default function Blog(): JSX.Element {
       "url": "https://homehealhub.org",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://homehealhub.org/logo.png"
+        "url": "https://www.homehealhub.org/logo.png"
       }
     },
     "mainEntity": {
@@ -98,7 +98,7 @@ export default function Blog(): JSX.Element {
           "@type": "ListItem",
           "position": 2,
           "name": "Blog",
-          "item": "https://homehealhub.org/blog"
+          "item": "https://www.homehealhub.org/blog"
         }
       ]
     },
